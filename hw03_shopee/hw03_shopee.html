@@ -5,11 +5,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cssReset.css">
 
     <title>蝦皮切版作業</title>
 
     <style>
-        p {
+        body {
             font-family: Helvetica, sans-serif;
         }
         
@@ -36,7 +37,7 @@
             padding: 0px 0px 0px 5px;
             display: block;
             text-decoration: none;
-            color: #D0011B;
+            color: #d0011b;
             font-weight: 550;
             font-size: 17px;
         }
@@ -48,9 +49,8 @@
         }
         
         .header-group img {
-            padding: 0px 3px 0px 0px;
-            width: 16px;
-            height: 16px;
+            width: 14px;
+            height: 14px;
         }
         
         .header-item {
@@ -64,18 +64,26 @@
             text-align: center;
             font-size: 15px;
             font-weight: 500;
+            padding: 1px 0px 0px 5px;
         }
         
         .see-all {
             position: absolute;
             right: 20px;
-            display: flex;
-            color: #D0011B;
             font-size: 14px;
             font-weight: 550;
         }
         
+        .see-all a {
+            display: inline-block;
+            text-decoration: none;
+            color: #d0011b;
+            display: flex;
+            align-items: center;
+        }
+        
         .see-all img {
+            display: inline-block;
             width: 20px;
             height: 20px;
             padding: 3px 5px 5px 8px;
@@ -92,7 +100,7 @@
         .ad-pic {
             padding: 10px 10px;
             width: 400px;
-            height: 480px;
+            height: 450px;
         }
         
         .ad-pic img {
@@ -109,7 +117,7 @@
         }
         
         .product {
-            height: 250px;
+            height: 230px;
         }
         
         .product p {
@@ -117,19 +125,19 @@
             bottom: 40px;
             margin: auto;
             text-align: center;
-            color: #D0011B;
+            color: #d0011b;
             font-weight: 550;
             font-size: 18px;
+            padding: 5px 0px 0px 0px;
         }
         
         .product img {
-            width: 190px;
+            width: 180px;
         }
     </style>
 </head>
 
 <body>
-
     <div class="headerline">
         <div class="link-to-mall">
             <a href="#">蝦皮商城</a>
@@ -148,12 +156,11 @@
                 <p>正品保障</p>
             </div>
         </div>
+
         <div class="see-all">
-            <p>查看全部</p>
-            <img src="./image/arrow_icon.png" />
+            <a href="#">查看全部  <img src="./image/arrow_icon.png" /></a>
         </div>
     </div>
-
     <div class="brand-group">
         <div class="ad-pic">
             <img src="./image/Ad.png" alt="蝦皮廣告圖片" />

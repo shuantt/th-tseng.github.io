@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="cssReset.css">
+    <script src="https://kit.fontawesome.com/05704b3d70.js" crossorigin="anonymous"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+        body {
+            font-family: 'Noto Sans', sans-serif;
+            line-height: 1.5;
+        }
+
+        .icon::before {
+            display: none;
+        }
+
+        a {
+            text-decoration: none;
+            color: #0061FF;
+        }
+
+        .wrap {
+            width: 1000px;
+            padding: 50px 100px 0px;
+            margin: auto;
+        }
+
+        .intro-title {
+            width: auto;
+            margin: 0px auto 120px;
+            text-align: center;
+        }
+
+        .intro-title>h1 {
+            width: auto;
+            margin: 30px 0px;
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .intro-title>p {
+            width: auto;
+            margin: auto;
+            font-weight: 400;
+            font-size: 15px;
+            color: #324255;
+
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-box {
+            box-sizing: border-box;
+            width: auto;
+            height: 500px;
+            display: flex;
+            flex-direction: row;
+            padding: 0px 0px 100px;
+            margin: 0px 0px 100px;
+            border-bottom: #E0E5E9 1px solid;
+        }
+
+        .content-box:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .content-box:nth-last-child(1) {
+            margin-bottom: 0px;
+            border-bottom: 0px;
+        }
+
+        .content-text {
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .content-img {
+            width: 50%;
+            display: flex;
+            align-items: center;
+        }
+
+        .content-img img {
+            width: 100%;
+        }
+
+        .content-text>h2 {
+            width: auto;
+            margin-bottom: 30px;
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .content-box .icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            margin: 0px 0px 30px;
+        }
+
+        .content-text .icon>img {
+            width: 50px;
+
+        }
+
+        .content-text>p {
+            width: auto;
+            font-weight: 400;
+            font-size: 15px;
+            color: #324255;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .content-text>ul {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 25px;
+        }
+
+        .content-text li {
+            display: block;
+            box-sizing: border-box;
+            width: 50%;
+            margin: 0px 0px 5px;
+            font-size: 16px;
+            color: #00142D;
+            display: flex;
+        }
+
+        .fa-circle-check {
+            display: block;
+            width: 16px;
+            height: 16px;
+            color: #0061FF;
+            margin: 4px 8px 0px 0px;
+        }
+
+        .link-btn .arrow-move {
+            margin-left: 16px;
+            display: inline-block;
+            margin-bottom: 1px;
+        }
+
+        .arrow-move::before {
+            content: " ";
+            width: 16px;
+            height: 2px;
+            display: block;
+            border: 25%;
+            background-color: #0061FF;
+            transform: translate(-7px, 6px);
+            transition: .2s 0s cubic-bezier(.52, 0, .77, .99);
+        }
+
+        .arrow-move::after {
+            content: " ";
+            display: block;
+            height: 8px;
+            width: 8px;
+            transform: rotate(45deg);
+            border-top: 2px solid #0061FF;
+            border-right: 2px solid #0061FF;
+            transition: .2s 0s cubic-bezier(.52, 0, .77, .99);
+        }
+
+        .arrow-move:hover::before {
+            width: 32px;
+        }
+
+        .arrow-move:hover::after {
+            margin-left: 16px;
+        }
+
+        .features-box {
+            width: auto;
+            padding: 60px;
+            background-color: #F4F5F7;
+        }
+
+        .features-box>h1 {
+            width: 1200px;
+            margin: auto;
+            text-align: center;
+            font-weight: 700;
+            font-size: 30px;
+        }
+
+        .features-group {
+            width: 1200px;
+            margin: 50px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+        }
+
+        .feature {
+            box-sizing: border-box;
+            width: 300px;
+            margin: 0px 20px 50px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .feature>ul {
+            display: flex;
+            flex-direction: column;
+            align-content: center;
+        }
+
+        .feature>.wrap-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background-color: #FFF;
+            box-shadow: 0 0 10px #c3c3c3;
+            margin: 0px auto 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .feature img {
+            width: 60%;
+            height: 60%;
+        }
+
+        .feature>h2 {
+            font-size: 20px;
+            font-weight: 400;
+            text-align: center;
+        }
+
+        .feature>p {
+            font-size: 15px;
+            color: #00142D;
+        }
+    </style>
+</head>
+
+
+
+<body>
+    <div class="wrap">
+        <!-- ========================大標題區======================== -->
+        <div class="intro-title">
+            <h1>
+                單一平台就能助你
+                <br>
+                在全通路輕鬆開店創業
+            </h1>
+            <p>
+                從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，
+                <br>
+                並能同步管理所有銷售管道，SHOPLINE 助你賣得更多、賣得更好！
+            </p>
+        </div>
+        <!-- ========================主要內容區======================== -->
+        <div class="container">
+            <div class="content-box">
+                <div class="content-text">
+                    <h2>免寫程式、多款版型
+                        <br>
+                        輕鬆打造全能電商網站
+                    </h2>
+                    <div class="icon">
+                        <img src="/hw04_shopline/image/wave_icon.png" alt="wave icon">
+                    </div>
+                    <p>不會寫程式也能輕鬆架設品牌電商官網！任何產業都能找到合適的專業設計版型，以滑鼠拖曳就能完成網頁編輯，讓架設網站就像堆積木一樣簡單。</p>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i>豐富版型主題與字型搭配</li>
+                        <li><i class="fa-solid fa-circle-check"></i>RWD 響應式網頁設計</li>
+                        <li><i class="fa-solid fa-circle-check"></i>獨有網址 ＆ SSL 安全憑證</li>
+                        <li><i class="fa-solid fa-circle-check"></i>SEO 搜尋引擎優化</li>
+                        <li><i class="fa-solid fa-circle-check"></i>一頁商店</li>
+                        <li><i class="fa-solid fa-circle-check"></i>開放 HTML／CSS 編輯</li>
+                    </ul>
+                    <div class="link-btn">
+                        <a href="#">看看開店祕技
+                            <div class="arrow-move">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="content-img">
+                    <img src="/hw04_shopline/image/intro_pic1.webp">
+                </div>
+            </div>
+            <div class="content-box">
+                <div class="content-text">
+                    <h2>支持海內外電商
+                        <br>
+                        金流、物流一次搞定
+                    </h2>
+                    <div class="icon">
+                        <img src="/hw04_shopline/image/wave_icon.png" alt="wave icon">
+                    </div>
+                    <p>支持在地及國際金流、物流串接服務，提供海內外顧客最便利的付款及送貨服務，加速消費者完成下單交易，大幅降低購物車放棄率！</p>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i>線上信用卡刷卡</li>
+                        <li><i class="fa-solid fa-circle-check"></i>第三方金流／行動支付整合</li>
+                        <li><i class="fa-solid fa-circle-check"></i>超商代碼／條碼繳費</li>
+                        <li><i class="fa-solid fa-circle-check"></i>多溫層宅配並指定運費</li>
+                        <li><i class="fa-solid fa-circle-check"></i>超商／宅配貨到付款</li>
+                        <li><i class="fa-solid fa-circle-check"></i>發票開立與串接</li>
+                    </ul>
+                    <div class="link-btn">
+                        <a href="#">了解更多金物流
+                            <div class="arrow-move">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="content-img">
+                    <img src="/hw04_shopline/image/intro_pic2.png">
+                </div>
+            </div>
+            <div class="content-box">
+                <div class="content-text">
+                    <h2>刺激下單，創造回購
+                        <br>
+                        行銷導流、促購模組任你玩
+                    </h2>
+                    <div class="icon">
+                        <img src="/hw04_shopline/image/wave_icon.png" alt="wave icon">
+                    </div>
+                    <p>多元優惠活動、會員集客機制、網紅分潤以及直播購物等豐富功能，將電商行銷玩法一網打盡，助你成功優化行銷活動成效，刺激顧客下單、吸引鐵粉回購！</p>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i>超過 20 種優惠促銷功能</li>
+                        <li><i class="fa-solid fa-circle-check"></i>社群直播購物系統</li>
+                        <li><i class="fa-solid fa-circle-check"></i>會員分級／點數／購物金</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Facebook／Google／LINE 廣告追蹤</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Instagram 購物功能</li>
+                        <li><i class="fa-solid fa-circle-check"></i>Facebook／Instagram／LINE 對話式購物</li>
+                    </ul>
+                    <div class="link-btn">
+                        <a href="#">看更多優惠模組
+                            <div class="arrow-move">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="content-img">
+                    <img src="/hw04_shopline/image/intro_pic3.png">
+                </div>
+            </div>
+            <div class="content-box">
+                <div class="content-text">
+                    <h2>O2O 全通路無縫整併
+                        <br>
+                        輕鬆管理網店、門市以及其他通路
+                    </h2>
+                    <div class="icon">
+                        <img src="/hw04_shopline/image/wave_icon.png" alt="wave icon">
+                    </div>
+                    <p>不論是網店拓展門市，還是門市想發展網路生意，從商品、庫存、訂單等各項虛實店舖的資料都能完善整併，輕鬆實現全通路會員經營到多店營運。</p>
+                    <ul>
+                        <li><i class="fa-solid fa-circle-check"></i>門市 POS 系統</li>
+                        <li><i class="fa-solid fa-circle-check"></i>線上線下會員／商品／庫存整合</li>
+                        <li><i class="fa-solid fa-circle-check"></i>門市快速集客工具</li>
+                        <li><i class="fa-solid fa-circle-check"></i>O2O 即時銷售報表分析</li>
+                        <li><i class="fa-solid fa-circle-check"></i>進銷庫存／調撥／多店管理</li>
+                        <li><i class="fa-solid fa-circle-check"></i>串接 Shopee 蝦皮購物庫存</li>
+                    </ul>
+                    <div class="link-btn">
+                        <a href="#">了解更多全通路整合
+                            <div class="arrow-move">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="content-img">
+                    <img src="/hw04_shopline/image/intro_pic4.png">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- ========================更多服務區======================== -->
+    <div class="features-box">
+        <h1>更多服務與功能</h1>
+        <ul class="features-group">
+            <li class="feature">
+                <div class="wrap-img">
+                    <img src="/hw04_shopline/image/feature-img (1).png">
+                </div>
+                <h2>強大庫存及訂單系統</h2>
+                <p>從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
+            </li>
+            <li class="feature">
+                <div class="wrap-img">
+                    <img src="/hw04_shopline/image/feature-img (2).png">
+                </div>
+                <h2>即時化商店業績分析</h2>
+                <p>圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
+            </li>
+            <li class="feature">
+                <div class="wrap-img">
+                    <img src="/hw04_shopline/image/feature-img (3).png">
+                </div>
+                <h2>多國語系、幣值切換</h2>
+                <p>想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
+            </li>
+            <li class="feature">
+                <div class="wrap-img">
+                    <img src="/hw04_shopline/image/feature-img (4).png">
+                </div>
+                <h2>專業顧問線上支援</h2>
+                <p>迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
+            </li>
+            <li class="feature">
+                <div class="wrap-img">
+                    <img src="/hw04_shopline/image/feature-img (5).png">
+                </div>
+                <h2>廣告行銷加值服務</h2>
+                <p>由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
+            </li>
+            <li class="feature">
+                <div class="wrap-img">
+                    <img src="/hw04_shopline/image/feature-img (6).png">
+                </div>
+                <h2>老闆專屬成長社群</h2>
+                <p>致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
+            </li>
+        </ul>
+    </div>
+</body>
+
+</html>

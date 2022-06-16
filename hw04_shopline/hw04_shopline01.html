@@ -156,11 +156,6 @@
             margin-bottom: 1px;
         }
 
-        
-        /* 這邊的做法是，一個空白div放在a裡面，偽元素長在div上。hover用在div上。
-        問題是：因為hover在div上，所以滑鼠碰到超連結的時候，不會有箭頭hover的作用。
-        有沒有辦法讓a:hover這件事可以作用在a底下的div上？ */
-
         .arrow-move::before {
             content: " ";
             width: 16px;
@@ -183,11 +178,11 @@
             transition: .2s 0s cubic-bezier(.52, 0, .77, .99);
         }
 
-        .arrow-move:hover::before {
+        .link-btn:hover .arrow-move::before {
             width: 32px;
         }
 
-        .arrow-move:hover::after {
+        .link-btn:hover .arrow-move::after {
             margin-left: 16px;
         }
         

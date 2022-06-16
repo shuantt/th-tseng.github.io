@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SHOPLINE1</title>
+    <title>SHOPLINE2</title>
     <link rel="stylesheet" href="cssReset.css">
     <script src="https://kit.fontawesome.com/05704b3d70.js" crossorigin="anonymous"></script>
     <style>
@@ -37,7 +37,7 @@
             text-align: center;
         }
 
-        .intro-title>h2 {
+        .intro-title>h1 {
             width: auto;
             margin: 30px 0px;
             font-weight: 700;
@@ -91,7 +91,7 @@
             width: 100%;
         }
 
-        .content-text>h3 {
+        .content-text>h2 {
             width: auto;
             margin-bottom: 30px;
             font-weight: 700;
@@ -156,12 +156,12 @@
             margin-bottom: 1px;
         }
 
-        
-        /* 這邊的做法是，一個空白div放在a裡面，偽元素長在div上。hover用在div上。
+        /* 
+        這邊的做法是，一個空白div放在a裡面，偽元素長在div上。hover用在div上。
         問題是：因為hover在div上，所以滑鼠碰到超連結的時候，不會有箭頭hover的作用。
         有沒有辦法讓a:hover這件事可以作用在a底下的div上？ */
 
-        .arrow-move::before {
+        /* .arrow-move::before {
             content: " ";
             width: 16px;
             height: 2px;
@@ -189,15 +189,55 @@
 
         .arrow-move:hover::after {
             margin-left: 16px;
-        }
+        } */
+
+        /* 
+        這邊是偽元素放在a身上，改變定位讓箭頭形狀出現。
+        問題是：因為定位的關係，箭頭出現在a的固定位置上，不會被推到字的最後面。 */
         
+        .link-btn>a::before {
+            content: " ";
+            width: 16px;
+            height: 2px;
+            display: block;
+            border: 25%;
+            background-color: #0061FF;
+            position: relative;
+            left: 120px;
+            top:8px;
+            transform: translate(-7px, 6px);
+            transition: .2s 0s cubic-bezier(.52, 0, .77, .99);
+        }
+
+        .link-btn>a::after {
+            content: " ";
+            display: block;
+            height: 8px;
+            width: 8px;
+            position: relative;
+            left: 120px;
+            bottom: 17px;
+            transform: rotate(45deg);
+            border-top: 2px solid #0061FF;
+            border-right: 2px solid #0061FF;
+            transition: .2s 0s cubic-bezier(.52, 0, .77, .99);
+        }
+
+        .link-btn>a:hover::before {
+            width: 32px;
+        }
+
+        .link-btn>a:hover::after {
+            margin-left: 16px;
+        }
+
         .features-box {
             width: auto;
             padding: 60px;
             background-color: #F4F5F7;
         }
 
-        .features-box>h2 {
+        .features-box>h1 {
             width: 1200px;
             margin: auto;
             text-align: center;
@@ -244,7 +284,7 @@
             height: 60%;
         }
 
-        .feature>h3 {
+        .feature>h2 {
             font-size: 20px;
             font-weight: 400;
             text-align: center;
@@ -264,11 +304,11 @@
     <div class="wrap">
         <!-- ========================大標題區======================== -->
         <div class="intro-title">
-            <h2>
+            <h1>
                 單一平台就能助你
                 <br>
                 在全通路輕鬆開店創業
-            </h2>
+            </h1>
             <p>
                 從網路商店架站到實體門市管理，只需要一個平台，就能輕鬆實現開店創業，
                 <br>
@@ -279,10 +319,10 @@
         <div class="container">
             <div class="content-box">
                 <div class="content-text">
-                    <h3>免寫程式、多款版型
+                    <h2>免寫程式、多款版型
                         <br>
                         輕鬆打造全能電商網站
-                    </h3>
+                    </h2>
                     <div class="icon">
                         <img src="/hw04_shopline/image/wave_icon.png" alt="wave icon">
                     </div>
@@ -295,16 +335,16 @@
                         <li><i class="fa-solid fa-circle-check"></i>一頁商店</li>
                         <li><i class="fa-solid fa-circle-check"></i>開放 HTML／CSS 編輯</li>
                     </ul>
-                    <!-- <div class="link-btn">
+                    <div class="link-btn">
                         <a href="#">看看開店祕技
                         </a>
-                    </div> -->
-                    <div class="link-btn">
+                    </div>
+                    <!-- <div class="link-btn">
                         <a href="#">看看開店祕技
                             <div class="arrow-move">
                             </div>
                         </a>
-                    </div>
+                    </div> -->
                 </div>
                 <div class="content-img">
                     <img src="/hw04_shopline/image/intro_pic1.webp">
@@ -312,10 +352,10 @@
             </div>
             <div class="content-box">
                 <div class="content-text">
-                    <h3>支持海內外電商
+                    <h2>支持海內外電商
                         <br>
                         金流、物流一次搞定
-                    </h3>
+                    </h2>
                     <div class="icon">
                         <img src="/hw04_shopline/image/wave_icon.png" alt="wave icon">
                     </div>
@@ -341,10 +381,10 @@
             </div>
             <div class="content-box">
                 <div class="content-text">
-                    <h3>刺激下單，創造回購
+                    <h2>刺激下單，創造回購
                         <br>
                         行銷導流、促購模組任你玩
-                    </h3>
+                    </h2>
                     <div class="icon">
                         <img src="/hw04_shopline/image/wave_icon.png" alt="wave icon">
                     </div>
@@ -370,10 +410,10 @@
             </div>
             <div class="content-box">
                 <div class="content-text">
-                    <h3>O2O 全通路無縫整併
+                    <h2>O2O 全通路無縫整併
                         <br>
                         輕鬆管理網店、門市以及其他通路
-                    </h3>
+                    </h2>
                     <div class="icon">
                         <img src="/hw04_shopline/image/wave_icon.png" alt="wave icon">
                     </div>
@@ -401,48 +441,48 @@
     </div>
     <!-- ========================更多服務區======================== -->
     <div class="features-box">
-        <h2>更多服務與功能</h2>
+        <h1>更多服務與功能</h1>
         <ul class="features-group">
             <li class="feature">
                 <div class="wrap-img">
                     <img src="/hw04_shopline/image/feature-img (1).png">
                 </div>
-                <h3>強大庫存及訂單系統</h3>
+                <h2>強大庫存及訂單系統</h2>
                 <p>從商品數量、貨況到訂單付款狀態、物流貨態一目瞭然，提升營運效率超有感。</p>
             </li>
             <li class="feature">
                 <div class="wrap-img">
                     <img src="/hw04_shopline/image/feature-img (2).png">
                 </div>
-                <h3>即時化商店業績分析</h3>
+                <h2>即時化商店業績分析</h2>
                 <p>圖表化報表助你一手掌握商店概況，讓數據助攻企業成長，營運策略更有方向。</p>
             </li>
             <li class="feature">
                 <div class="wrap-img">
                     <img src="/hw04_shopline/image/feature-img (3).png">
                 </div>
-                <h3>多國語系、幣值切換</h3>
+                <h2>多國語系、幣值切換</h2>
                 <p>想做跨境電商也ＯＫ！提供語言、幣別、稅金等進階功能，友善應對海外消費需求。</p>
             </li>
             <li class="feature">
                 <div class="wrap-img">
                     <img src="/hw04_shopline/image/feature-img (4).png">
                 </div>
-                <h3>專業顧問線上支援</h3>
+                <h2>專業顧問線上支援</h2>
                 <p>迅速、透明的溝通管道，協助你快速解決從線上到線下、從在地到海外的網店疑難。</p>
             </li>
             <li class="feature">
                 <div class="wrap-img">
                     <img src="/hw04_shopline/image/feature-img (5).png">
                 </div>
-                <h3>廣告行銷加值服務</h3>
+                <h2>廣告行銷加值服務</h2>
                 <p>由官方認證的專業投手團隊，協助品牌投遞 Facebook、Google、LINE 等廣告。</p>
             </li>
             <li class="feature">
                 <div class="wrap-img">
                     <img src="/hw04_shopline/image/feature-img (6).png">
                 </div>
-                <h3>老闆專屬成長社群</h3>
+                <h2>老闆專屬成長社群</h2>
                 <p>致力為品牌店家打造能深度交流且互助的生態體系，是拓展人脈、商機的絕佳場域。</p>
             </li>
         </ul>

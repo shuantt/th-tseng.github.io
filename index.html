@@ -11,19 +11,25 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
         @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'VT323', 'DotGothic16', sans-serif;
             padding-top: 90px;
-            }
-        body .course > .item ::-webkit-scrollbar {
+        }
+
+        body .course>.item ::-webkit-scrollbar {
             display: none;
         }
-        
+
         a {
             text-decoration: none;
             color: #2a2a2a;
         }
-        
+
         .header {
             width: 960px;
             height: 30px;
@@ -31,20 +37,20 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(150, 150, 150, 50%);
+            background: rgb(150, 150, 150);
             position: fixed;
             margin: auto;
-            top:0;
+            top: 0;
             right: 0;
             left: 0;
         }
-        
+
         .header>.title {
             color: white;
             font-size: 24px;
             margin-left: 40px;
         }
-        
+
         .nav {
             width: 240px;
             display: flex;
@@ -52,7 +58,7 @@
             position: relative;
             right: 60px;
         }
-        
+
         .nav a {
             width: 79px;
             height: 30px;
@@ -65,12 +71,12 @@
             margin: auto;
             border-left: 1px solid white;
         }
-        
+
         a:hover {
             background-color: white;
             color: black;
         }
-        
+
         .content {
             width: 960px;
             height: 500px;
@@ -81,7 +87,7 @@
             padding: 30px 0px;
             justify-content: space-between;
         }
-        
+
         .course {
             box-sizing: border-box;
             width: 300px;
@@ -92,7 +98,7 @@
             background-color: rgb(238, 238, 238);
             hyphens: auto;
         }
-        
+
         .course h3 {
             box-sizing: border-box;
             width: 220px;
@@ -105,13 +111,12 @@
             display: flex;
             justify-content: center;
         }
-        
+
         .course>.item {
             height: 300px;
             padding: 10px;
-            overflow-y: scroll;
         }
-        
+
         .item>a {
             margin: auto;
             width: 220px;
@@ -122,7 +127,7 @@
             line-height: 40px;
             font-family: 'DotGothic16';
         }
-        
+
         .css-test {
             box-sizing: border-box;
             width: 960px;
@@ -131,16 +136,16 @@
             padding: 20px;
             border: 1px solid #2a2a2a;
         }
-        
+
         .css-test {
             margin: auto;
             display: flex;
         }
-        
+
         .text-test>a {
             color: #41B3A3;
         }
-        
+
         .color-schemes {
             width: 960px;
             display: flex;
@@ -149,7 +154,7 @@
             align-items: center;
             justify-content: space-between;
         }
-        
+
         .color {
             box-sizing: border-box;
             width: 465px;
@@ -158,7 +163,7 @@
             align-items: center;
             justify-content: space-between;
         }
-        
+
         .color>.title {
             width: 480px;
             height: 50px;
@@ -168,12 +173,12 @@
             justify-content: center;
             background-color: rgb(238, 238, 238);
         }
-        
+
         .color h3 {
             color: #2a2a2a;
             text-align: center;
         }
-        
+
         .color>.circle {
             box-sizing: border-box;
             width: 150px;
@@ -183,19 +188,19 @@
             align-items: center;
             justify-content: center;
         }
-        
+
         .circle>p {
             text-align: center;
         }
-        
+
         .color>.circle {
             transition: all 1s;
         }
-        
+
         .color>.circle:hover {
             border-radius: 50%;
         }
-        
+
         .opacity {
             width: 960px;
             margin: auto;
@@ -223,35 +228,20 @@
                 <a href="./hw01_schedule/hw01_schedule.html">作業一 - 學校課表</a>
                 <a href="./hw02_google/hw02_google.html">作業二 - google切版</a>
                 <a href="./hw03_shopee/hw03_shopee.html">作業三 - 蝦皮切版</a>
-                <a href="./hw04_shopline/hw04_shopline.html">作業四 - SHOPLINE</a>
+                <a href="./hw04_shopline/hw04_shopline01.html">作業四 - SHOPLINE</a>
 
             </div>
         </div>
         <div class="course">
-            <h3>Opacity</h3>
+            <h3>Web Function</h3>
             <div class="item">
-                <p>0% 不透明度 > 00</p>
-                <p>10% 不透明度 > 1A</p>
-                <p>20% 不透明度 > 33</p>
-                <p>25% 不透明度 > 40</p>
-                <p>30% 不透明度 > 4D</p>
-                <p>40% 不透明度 > 66</p>
-                <p>50% 不透明度 > 80</p>
-                <p>60% 不透明度 > 99</p>
-                <p>70% 不透明度 > B2</p>
-                <p>75% 不透明度 > BF</p>
-                <p>80% 不透明度 > CC</p>
-                <p>90% 不透明度 > E5</p>
+                <a href="practice_func/coverAd_closebtn.html">蓋板廣告關閉按鈕</a>
+                <a href="practice_func/coverAd_closebtn.html">網頁錨點定位</a>
             </div>
         </div>
         <div class="course">
             <h3>About Text</h3>
             <div class="item">
-                <p>em隨比例</p>
-                <p>ltr (左到右) <br> rtl (右到左)</p>
-                <p>一次設定完: font: small-caps italic bold 66px/70px arial;</p>
-                <p>hyphens折行測試</p>
-                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minima ullam, labore nobis nemo aliquid iure eveniet quos sapiente iusto nostrum.</p>
             </div>
         </div>
     </div>
@@ -263,7 +253,8 @@
             ">這行是超連結a加: overline underline, text-decoration-thickness: 2px</a>
             <br>
             <br>
-            <a href="#" style="text-decoration: underline; text-underline-offset: 10px"> 這行是超連結a加: text-decoration: underline; text-underline-offset: 10px</a>
+            <a href="#" style="text-decoration: underline; text-underline-offset: 10px"> 這行是超連結a加: text-decoration:
+                underline; text-underline-offset: 10px</a>
             <p>關於一些單位: 文字字級設定為20px。行高設定300%/3em/3。這樣行高換算出來就是60px</p>
         </div>
     </div>

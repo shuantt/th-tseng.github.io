@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web-Anchor Practice</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        list-style: none;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    a {
+        text-decoration: none;
+        color: white;
+    }
+
+    a:hover {
+        color: grey;
+    }
+
+    .top {
+        width: 100%;
+        height: 60px;
+        background-color: black;
+        color: white;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        position: fixed;
+        top: 0;
+    }
+
+    .top ul {
+        display: flex;
+    }
+
+    .banner {
+        width: 100%;
+    }
+
+    img {
+        width: 100%;
+        height: 480px;
+        vertical-align: bottom;
+    }
+
+    .top ul li {
+        width: 100px;
+        border-right: 1px solid lightslategray;
+        text-align: center;
+        display: block;
+    }
+
+    section:nth-child(2) {
+        margin-top: 60px;
+    }
+
+    section:nth-of-type(odd) .content {
+        background-color: lightgray;
+    }
+
+    section:nth-of-type(even) .content {
+        background-color: lightskyblue;
+    }
+
+    :target {
+        padding-top: 60px;
+        margin-top: -60px;
+    }
+</style>
+
+<body>
+    <section class="top">
+        <ul>
+            <li><a href="#">回頂端</a></li>
+            <li><a href="#A">標題一</a></li>
+            <li><a href="#B">標題二</a></li>
+            <li><a href="#C">標題三</a></li>
+        </ul>
+    </section>
+    <div class="banner">
+        <img src="https://fakeimg.pl/1200x1000/200">
+    </div>
+    <section>
+        <h2 id="A">標題一</h2>
+        <div class="content">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+        </div>
+    </section>
+    <section>
+        <h2 id="B">標題二</h2>
+        <div class="content">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+        </div>
+    </section>
+    <section>
+        <h2 id="C">標題三</h2>
+        <div class="content">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nam
+                laboriosam temporibus vitae, quos amet dicta ex possimus voluptas at
+                nostrum? Molestiae alias, accusamus nostrum pariatur nisi atque autem
+                ipsum facere.
+            </p>
+        </div>
+    </section>
+</body>
+
+</html>

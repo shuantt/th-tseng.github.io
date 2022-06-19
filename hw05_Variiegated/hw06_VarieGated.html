@@ -39,10 +39,8 @@
     position: relative;
   }
 
-  .header-navbar h1 {
-    font-size: 1px;
-    position: relative;
-    top: 1px;
+  h1 {
+    visibility: hidden
   }
 
   .header-funcbar {
@@ -186,7 +184,9 @@
     justify-content: space-between;
     padding: 20px 0px;
   }
-
+  .header-navbar h2{
+    visibility: hidden;
+  }
   .header-navbar a {
     margin: auto 0px;
   }
@@ -1011,6 +1011,7 @@
           <a href="#">+3(800) 2345-6789</a>
           7 Days a week from 9:00 am to 7:00 pm
         </div>
+          <h1>Variegated </h1>
         <div class="func-group">
           <div class="func-item">
             <form class="currency-converter" action="">
@@ -1043,9 +1044,9 @@
       </div>
       <nav class="header-navbar">
         <a href="#">
-          <h1>Variegated </h1>
-          <img src="/hw05_Variiegated/image/Variegated_logo.webp" alt="Variegated's logo" />
+          <div class="wrap-img"><img src="/hw05_Variiegated/image/Variegated_logo.webp" alt="Variegated's logo" /></div>
         </a>
+        <h2>Navigation Bar</h2>
         <ul class="nav-list">
           <li class="nav-list-item">
             <a href="#">HOME</a>

@@ -12,7 +12,7 @@
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
-  html{
+  html {
     scroll-behavior: smooth;
   }
 
@@ -185,9 +185,11 @@
     justify-content: space-between;
     padding: 20px 0px;
   }
-  .header-navbar h2{
+
+  .header-navbar h2 {
     visibility: hidden;
   }
+
   .header-navbar a {
     margin: auto 0px;
   }
@@ -556,6 +558,20 @@
     z-index: 1;
   }
 
+  .models-item .wrap-img img:nth-of-type(2) {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    transition: .5s;
+  }
+
+  .models-item a:hover img:nth-of-type(2) {
+    opacity: 100;
+    z-index: 1;
+  }
+
   .models-item h3 {
     font-size: 16px;
     font-weight: 300;
@@ -673,27 +689,40 @@
   .wrap-view-btn,
   .wrap-compare-btn {
     position: absolute;
-    top: -60px;
-    right: -20px;
     opacity: 0;
-    transition: all .3s ease;
+    transition: all .2s ease;
     z-index: 4;
+  }
+
+  .wrap-wishlist-btn {
+    top: -60px;
+    right: 40px;
+  }
+
+  .wrap-compare-btn {
+    top: -60px;
+    right: 30px;
+  }
+
+  .wrap-view-btn {
+    top: -60px;
+    right: 0px;
   }
 
   .models-item a:hover .wrap-wishlist-btn {
     opacity: 100;
-    transform: translateX(-100px);
+    transform: translateX(-40px);
   }
 
   .models-item a:hover .wrap-compare-btn {
     opacity: 100;
-    transform: translateX(-70px);
+    transform: translateX(-20px);
     transition-delay: 0.1s;
   }
 
   .models-item a:hover .wrap-view-btn {
     opacity: 100;
-    transform: translateX(-40px);
+    transform: translateX(-20px);
     transition-delay: 0.2s;
   }
 
@@ -786,6 +815,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
+    padding: 0px 20px;
 
   }
 
@@ -849,15 +879,15 @@
 
   .get-news {
     display: flex;
-    width: 1200px;
-    padding: 15px 0px;
+    width: 1120px;
+    padding: 15px 20px;
+    margin: 0px 40px;
     background-color: #FFECE5;
     justify-content: space-between;
     align-items: center;
   }
 
   .get-news p {
-    padding: 0px 20px;
     font-size: 24px;
     letter-spacing: 1px;
   }
@@ -926,6 +956,7 @@
     width: 25%;
     display: flex;
     flex-direction: column;
+    padding: 0px 20px;
   }
 
   .footer-main h2 {
@@ -941,7 +972,6 @@
     font-size: 14px;
     font-weight: 300;
     line-height: 3;
-
   }
 
   .footer-main li a {
@@ -962,7 +992,7 @@
     justify-content: space-between;
   }
 
-  .footer-main-inner-address>address {
+  .footer-main-inner-address address {
     color: #949494;
     padding: 16px 20px;
   }
@@ -986,19 +1016,21 @@
     right: 50px;
     transition: .5s;
   }
-  #web-anchor a{
+
+  #web-anchor a {
     width: 100%;
     height: 100%;
-    display:flex;
+    display: flex;
     align-items: center;
     justify-content: center;
   }
+
   #web-anchor a .fa-solid {
     color: white;
     font-size: 16px;
   }
 
-  #web-anchor:hover{
+  #web-anchor:hover {
     background: #ffb4b4;
   }
 </style>
@@ -1012,7 +1044,7 @@
           <a href="#">+3(800) 2345-6789</a>
           7 Days a week from 9:00 am to 7:00 pm
         </div>
-          <h1>Variegated </h1>
+        <h1>Variegated </h1>
         <div class="func-group">
           <div class="func-item">
             <form class="currency-converter" action="">
@@ -1224,6 +1256,7 @@
             <a href="#">
               <div class="wrap-img">
                 <img src="/hw05_Variiegated//image/Checked-tunic.jpg" alt="">
+                <img src="/hw05_Variiegated//image/Checked-tunic_2.jpg" alt="">
                 <div class="item-shade"></div>
               </div>
               <div class="models-item-content">
@@ -1250,6 +1283,7 @@
             <a href="#">
               <div class="wrap-img">
                 <img src="/hw05_Variiegated/image/Embroidered-shirt.jpg" alt="">
+
                 <div class="item-shade"></div>
               </div>
               <div class="models-item-content">
@@ -1276,6 +1310,7 @@
             <a href="#">
               <div class="wrap-img">
                 <img src="/hw05_Variiegated/image/Faux-leather-jacket-with-flowing-lapels.jpg" alt="">
+                <img src="/hw05_Variiegated/image/Faux-leather-jacket-with-flowing-lapels_2.jpg" alt="">
                 <div class="item-shade"></div>
               </div>
               <div class="models-item-content">
@@ -1301,6 +1336,7 @@
             <a href="#">
               <div class="wrap-img">
                 <img src="/hw05_Variiegated/image/Lightweight-puffer-jacket.jpg" alt="">
+                <img src="/hw05_Variiegated/image/Lightweight-puffer-jacket_2.jpg" alt="">
                 <div class="item-shade"></div>
               </div>
               <div class="models-item-content">
@@ -1327,6 +1363,8 @@
             <a href="#">
               <div class="wrap-img">
                 <img src="/hw05_Variiegated/image/Polka-dot-shirt-dress.jpg" alt="">
+                <img src="/hw05_Variiegated/image/Polka-dot-shirt-dress_2.jpg" alt="">
+
                 <div class="item-shade"></div>
               </div>
               <div class="models-item-content">
@@ -1352,6 +1390,7 @@
             <a href="#">
               <div class="wrap-img">
                 <img src="/hw05_Variiegated/image/Ripped-denim-jacket.jpg" alt="">
+                <img src="/hw05_Variiegated/image/Ripped-denim-jacket_2.jpg" alt="">
                 <div class="item-shade"></div>
               </div>
               <div class="models-item-content">

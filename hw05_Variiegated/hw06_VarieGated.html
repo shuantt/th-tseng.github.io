@@ -473,9 +473,7 @@
   }
 
   .highlight-container {
-    box-sizing: border-box;
     width: 1200px;
-    padding: 20px;
     margin: auto;
     display: flex;
     justify-content: space-between;
@@ -561,16 +559,16 @@
   }
 
   .models-item .wrap-img img:nth-of-type(2) {
-    opacity: 0;
+    display: none;
     position: absolute;
     top: 0;
     right: 0;
     z-index: -1;
-    transition: .3s;
+    transition: .5s;
   }
 
   .models-item a:hover img:nth-of-type(2) {
-    opacity: 100;
+    display: contents;
     z-index: 1;
   }
 
@@ -696,17 +694,17 @@
     z-index: 4;
   }
 
-  .wrap-wishlist-btn {
+  .wrap-wishlist-btn{
     top: -60px;
     right: 40px;
   }
 
-  .wrap-compare-btn {
+  .wrap-compare-btn{
     top: -60px;
     right: 30px;
   }
 
-  .wrap-view-btn {
+  .wrap-view-btn{
     top: -60px;
     right: 0px;
   }
@@ -836,7 +834,6 @@
     position: relative;
     right: -40px;
     top: -80px;
-    /* 這邊用margin-top更好 */
   }
 
   .post-item-container h3 {
@@ -881,16 +878,17 @@
   }
 
   .get-news {
+    box-sizing: border-box;
     display: flex;
-    width: 1120px;
-    padding: 15px 20px;
-    margin: 0px 40px;
+    width: 1200px;
+    padding: 15px 0px;
     background-color: #FFECE5;
     justify-content: space-between;
     align-items: center;
   }
 
   .get-news p {
+    padding: 0px 20px;
     font-size: 24px;
     letter-spacing: 1px;
   }
@@ -975,6 +973,7 @@
     font-size: 14px;
     font-weight: 300;
     line-height: 3;
+
   }
 
   .footer-main li a {
@@ -1002,7 +1001,6 @@
 
   .footer-main .nav-widget {
     color: white;
-    padding: 0px 20px;
     transition: .5s;
   }
 
@@ -1234,7 +1232,7 @@
           <li class="models-item">
             <a href="#">
               <div class="wrap-img">
-                <img src="/hw05_Variiegated/image/Buttoned-shirt.jpg" alt="">
+                <img src="/hw05_Variiegated//image/Buttoned-shirt.jpg" alt="">
                 <div class="item-shade"></div>
               </div>
               <div class="models-item-content">
@@ -1259,8 +1257,8 @@
           <li class="models-item">
             <a href="#">
               <div class="wrap-img">
-                <img src="/hw05_Variiegated/image/Checked-tunic.jpg" alt="">
-                <img src="/hw05_Variiegated/image/Checked-tunic_2.jpg" alt="">
+                <img src="/hw05_Variiegated//image/Checked-tunic.jpg" alt="">
+                <img src="/hw05_Variiegated//image/Checked-tunic_2.jpg" alt="">
                 <div class="item-shade"></div>
               </div>
               <div class="models-item-content">

@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cssReset.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        .body {
+            font-family: Helvetica, sans-serif;
+        }
+
+        #advantages {
+            padding: 30px;
+        }
+
+        /* 手機版本 */
+        .advantage-list {
+            max-width: 768px;
+            margin: 30px auto;
+        }
+
+        .advantage-item {
+            width: 100%;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 75px;
+        }
+
+        .advantage-item-info {
+            width: auto;
+            box-sizing: border-box;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .advange-item-info-title {
+            width: auto;
+            box-sizing: border-box;
+            display: flex;
+            padding: 10px 0px;
+            align-items: center;
+            background-color: #BB0404;
+        }
+
+        .advange-item-info-title-num {
+            transform: rotate(90deg);
+            font-size: 80px;
+            color: white;
+            padding: 5px;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        .advange-item-info-title h3 {
+            color: white;
+            font-size: 45px;
+            padding: 5px;
+        }
+
+        .advantage-item-info-content {
+            padding: 20px;
+            background-color: black;
+        }
+
+        .advantage-item-info-content h4,
+        .advantage-item-info-content p {
+            color: white;
+        }
+
+        .advantage-item-info-content h4 {
+            font-size: 24px;
+            margin-bottom: 5px;
+            font-weight: 600;
+        }
+
+        .advantage-item-info-content p {
+            font-size: 16px;
+            line-height: 2;
+            letter-spacing: 2px;
+        }
+
+        .wrap-img {
+            width: 100%;
+            display: flex;
+            position: relative;
+
+        }
+
+        .wrap-img img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+
+        .wrap-img-tag {
+            width: 10%;
+            height: 10%;
+            position: absolute;
+            right: 0;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+        }
+
+        .wrap-img-tag img {
+            width: 100%;
+            height: 100%;
+            vertical-align: top;
+        }
+
+        .advantage-item-revolution {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            background-color: #EEEEEE;
+        }
+
+        .advantage-item-revolution-list {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .advantage-item-revolution span {
+            color: #BB0404;
+            font-size: 16px;
+            font-weight: 900;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .advantage-item-revolution span::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            margin-left: 10px;
+            background-color: #BB0404;
+        }
+
+        .advantage-item-revolution h4 {
+            width: fit-content;
+            font-size: 16px;
+            color: white;
+            background-color: black;
+            border-radius: 3px;
+            padding: 5px 10px;
+            text-align: center;
+            margin-bottom: 5px;
+        }
+
+        .advantage-item-revolution p {
+            display: list-item;
+            list-style-type: disc;
+            color: #737373;
+            line-height: 1.5;
+            font-size: 14px;
+            margin-left: 30px;
+            margin-bottom: 5px;
+        }
+
+        .advantage-item-revolution-list-item:last-of-type p:last-child {
+            margin-bottom: 0px;
+        }
+
+
+        @media screen and (min-width: 768px) {
+            .advantage-list {
+                max-width: 960px;
+                margin: auto;
+            }
+
+            .advantage-item {
+                width: 100%;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                margin-bottom: -400px;
+                position: relative;
+            }
+            
+            .advantage-item:nth-child(odd) .advantage-item-info {
+                width: 37%;
+                height: 388px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                z-index: 1;
+            }
+
+            .advantage-item:nth-child(odd) .advantage-item-greyblock {
+                width: 46%;
+                height: 250px;
+                background-color: #EEEEEE;
+                position: relative;
+                top: -370px;
+                left: 521px;
+                z-index: -1;
+            }
+
+            .advantage-item:nth-child(odd) .wrap-img {
+                width: 72%;
+                display: flex;
+                position: relative;
+                top: -530px;
+                left: 180px;
+                z-index: 0;
+            }
+
+            .wrap-img img {
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+            }
+
+            .wrap-img-tag {
+                width: 10%;
+                height: 10%;
+                position: absolute;
+                right: -100%;
+                margin: auto;
+            }
+
+            .wrap-img-tag img {
+                width: 100%;
+                height: 100%;
+                vertical-align: top;
+            }
+
+            .advantage-list:nth-child(odd) .advantage-item-revolution {
+                box-sizing: border-box;
+                width: 71%;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                background-color: #EEEEEE;
+                position: relative;
+                top: -555px;
+                left: 50px;
+            }
+
+            /* 偶數 */
+
+            .advantage-item:nth-child(even) .advantage-item-info {
+                width: 37%;
+                height: 388px;
+                box-sizing: border-box;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                right: -605px;
+                z-index: 1;
+            }
+
+            .advantage-item:nth-child(even) .advantage-item-greyblock {
+                width: 54%;
+                height: 380px;
+                background-color: #EEEEEE;
+                position: relative;
+                top: -350px;
+                left: 300px;
+                z-index: -1;
+            }
+
+            .advantage-item:nth-child(even) .wrap-img-tag {
+                width: 10%;
+                height: 10%;
+                position: absolute;
+                right: 100%;
+            }
+
+            .advantage-item:nth-child(even) .wrap-img {
+                width: 72%;
+                display: flex;
+                position: relative;
+                top: -659px;
+                left: 30px;
+                z-index: 0;
+            }
+
+            .advantage-item:nth-child(even) .advantage-item-revolution {
+                box-sizing: border-box;
+                width: 71%;
+                padding: 20px;
+                display: flex;
+                flex-direction: column;
+                background-color: #EEEEEE;
+                position: relative;
+                top: -690px;
+                left: 279px;
+                z-index: 2;
+
+            }
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <section id="advantages">
+        <ul class="advantage-list">
+            <li class="advantage-item">
+                <div class="advantage-item-info">
+                    <div class="advange-item-info-title">
+                        <div class="advange-item-info-title-num">O1</div>
+                        <h3>操控樂趣</h3>
+                    </div>
+                    <div class="advantage-item-info-content">
+                        <h4>人人滿意的駕駛體驗</h4>
+                        <p>
+                            透過最佳重量分配，實現平順起步、直線穩定加速，過彎同時保持車身平穩，帶給駕駛更靈敏的道路反饋，享受隨心馳騁的行駛快感。
+                        </p>
+                    </div>
+                </div>
+                <div class="advantage-item-greyblock"></div>
+                <div class="wrap-img">
+                    <a href="#">
+                        <img src="/hw06_toyota/image/toyota_ 1.jpg" alt="A image link to watch toyota's video">
+                        <div class="wrap-img-tag">
+                            <img src="/hw06_toyota/image/youtube-icon.png" alt="youtube's icon">
+                        </div>
+                    </a>
+                </div>
+                <div class="advantage-item-revolution">
+                    <span>因為我們做了這些革新</span>
+                    <ul>
+                        <li class="advantage-item-revolution-list-item">
+                            <h4>低重心設計</h4>
+                            <p>透過低重心設計，不僅呈現更低服的外觀，更能減少車身傾斜，保持高速行駛穩定。</p>
+                        </li>
+                        <li class="advantage-item-revolution-list-item">
+                            <h4>車體剛性強化</h4>
+                            <p>車身結構採用超高強度鋼材，提高車輛穩定性，同時藉由雷射強化焊接技術，大幅增加和點數量，提升車抗扭剛性，強化駕駛穩定性及安全性。</p>
+                        </li>
+                        <li class="advantage-item-revolution-list-item">
+                            <h4>四輪獨立懸吊</h4>
+                            <p>搭載全新四輪獨立懸吊設定，透過懸吊的高乘載強度，保持輪胎抓地力，同時兼顧像靈敏度與清溪路感回饋，提升駕駛樂趣。</p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="advantage-item">
+                <div class="advantage-item-info">
+                    <div class="advange-item-info-title">
+                        <div class="advange-item-info-title-num">O2</div>
+                        <h3>安全守護</h3>
+                    </div>
+                    <div class="advantage-item-info-content">
+                        <h4>行車更安心的高剛性車體</h4>
+                        <p>
+                            您的愛車會妥善保護您，強悍穩固的車身可使您安全無虞。世界級的安全功能讓您輕鬆自如享受旅程、毫無後顧之憂。
+                        </p>
+                    </div>
+                </div>
+                <div class="advantage-item-greyblock"></div>
+                <div class="wrap-img">
+                    <a href="#">
+                        <img src="/hw06_toyota/image/toyota_ 2.jpg" alt="">
+                        <div class="wrap-img-tag">
+                            <img src="/hw06_toyota/image/youtube-icon.png" alt="youtube's icon">
+                        </div>
+                    </a>
+                </div>
+                <div class="advantage-item-revolution">
+                    <span>因為我們做了這些革新</span>
+                    <ul>
+                        <li class="advantage-item-revolution-list-item">
+                            <h4>主動安全</h4>
+                            <p>以先進的TSS系統，主動偵測路況，輔助駕駛判斷路況並維持行車安全。</p>
+                        </li>
+                        <li class="advantage-item-revolution-list-item">
+                            <h4>被動安全</h4>
+                            <p>堅固的高剛性車體，使用熱沖壓材料的高強度抗扭鋼板，強化座艙對意外事故的保護力。</p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="advantage-item">
+                <div class="advantage-item-info">
+                    <div class="advange-item-info-title">
+                        <div class="advange-item-info-title-num">O3</div>
+                        <h3>乘坐舒適</h3>
+                    </div>
+                    <div class="advantage-item-info-content">
+                        <h4>令人放鬆舒適的車室空間</h4>
+                        <p>
+                            車室空間設計著重人體工學，透過方向盤、踏板等位置優化，追求更舒適的駕駛位置，並以心形座椅設計，提高座椅包覆性。致力實現長途駕駛不疲勞的書是駕馭體驗。
+                        </p>
+                    </div>
+                </div>
+                <div class="advantage-item-greyblock"></div>
+                <div class="wrap-img">
+                    <a href="#">
+                        <img src="/hw06_toyota/image/toyota_ 3.jpg" alt="">
+                        <div class="wrap-img-tag">
+                            <img src="/hw06_toyota/image/youtube-icon.png" alt="youtube's icon">
+                        </div>
+                    </a>
+                </div>
+                <div class="advantage-item-revolution">
+                    <span>因為我們做了這些革新</span>
+                    <ul>
+                        <li class="advantage-item-revolution-list-item">
+                            <h4>駕駛位置優化</h4>
+                            <p>針對駕駛位置進行徹底的修改，讓駕馭者可如同握手般自然且舒適地操控方向盤。</p>
+                        </li>
+                        <li class="advantage-item-revolution-list-item">
+                            <h4>駕駛視野佳</h4>
+                            <p>考量駕駛坐進車內的高度，透過前擋風玻璃位置的調整，達到忙區極小化，使駕駛視野更開闊，同步提升駕馭安全。</p>
+                        </li>
+                        <li class="advantage-item-revolution-list-item">
+                            <h4>更寧靜的車室</h4>
+                            <p>採用最新三層結構的隔音材料，與引擎、變速箱的零件改革、將座艙的震動抑制在最小限度，提供乘客舒適安靜的感受。</p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="advantage-item">
+                <div class="advantage-item-info">
+                    <div class="advange-item-info-title">
+                        <div class="advange-item-info-title-num">O4</div>
+                        <h3>以人為本</h3>
+                    </div>
+                    <div class="advantage-item-info-content">
+                        <h4>使用者導向的貼心設計</h4>
+                        <p>藉由高度人性化的介面整合、傳遞車輛資訊，豐富日常駕駛體驗。從提升油耗表現到行李廂空間最適化，軍細心考量，更加貼近使用者真正所需與習慣，並給予及時回應。
+                        </p>
+                    </div>
+                </div>
+                <div class="advantage-item-greyblock"></div>
+                <div class="wrap-img">
+                    <a href="#">
+                        <img src="/hw06_toyota/image/toyota_ 4.jpg" alt="">
+                        <div class="wrap-img-tag">
+                            <img src="/hw06_toyota/image/youtube-icon.png" alt="youtube's icon">
+                        </div>
+                    </a>
+                </div>
+                <div class="advantage-item-revolution">
+                    <span>因為我們做了這些革新</span>
+                    <ul>
+                        <li class="advantage-item-revolution-list-item">
+                            <h4>優異油耗表現</h4>
+                            <p>以AURIS為例，更強近的高校引擎將熱效率提升至40%，達到世界級水準，屢屢突破燃油效率新境界。</p>
+                        </li>
+                        <li class="advantage-item-revolution-list-item">
+                            <h4>行李箱空間最適化</h4>
+                            <p>以PRIUS為例，透過將電池位置移到後座下方，讓行李廂擁有更大的空間。</p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="advantage-item">
+                <div class="advantage-item-info">
+                    <div class="advange-item-info-title">
+                        <div class="advange-item-info-title-num">O5</div>
+                        <h3>引以為傲</h3>
+                    </div>
+                    <div class="advantage-item-info-content">
+                        <h4>極具吸引力的精心設計</h4>
+                        <p>
+                            TNGA車款擁有讓人忍不住回頭的新潮外觀、讓駕駛充滿自信的駕馭快感！不僅讓車主能展現個人風格，也能讓擁有者都能引以為傲。
+                        </p>
+                    </div>
+                </div>
+                <div class="advantage-item-greyblock"></div>
+                <div class="wrap-img">
+                    <a href="#">
+                        <img src="/hw06_toyota/image/toyota_ 5.jpg" alt="">
+                        <div class="wrap-img-tag">
+                            <img src="/hw06_toyota/image/youtube-icon.png" alt="youtube's icon">
+                        </div>
+                    </a>
+                </div>
+                <div class="advantage-item-revolution">
+                    <span>因為我們做了這些革新</span>
+                    <ul>
+                        <li class="advantage-item-revolution-list-item">
+                            <h4>設計概念</h4>
+                            <p>TNGA低重心設計，不僅呈現更低服的運動化外觀，更講究高品質內裝的一致性。</p>
+                        </li>
+                        <li class="advantage-item-revolution-list-item">
+                            <h4>環保概念</h4>
+                            <p>為了對環境保護盡一份心力，我們全面提升傳統引擎、變速箱與油電複合動力的動力效能。</p>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </section>
+</body>
+
+</html>

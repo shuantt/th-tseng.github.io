@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Variegated - Fashion & Beauty</title>
+  <link rel="stylesheet" href="cssReset.css" />
+  <script src="https://kit.fontawesome.com/05704b3d70.js" crossorigin="anonymous"></script>
+</head>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  .wrapper {
+    margin: auto;
+    font-family: 'Roboto', sans-serif;
+    line-height: 1.5;
+    position: relative;
+  }
+
+  .wrapper p {
+    line-height: 1.5;
+  }
+
+  .wrapper a {
+    text-decoration: none;
+    color: black;
+  }
+
+  .main-header {
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  h1 {
+    color: white;
+    font-size: 1px;
+  }
+
+  .header-funcbar {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #f6f6f6;
+  }
+
+  .contact {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+    font-size: 14px;
+    font-weight: 300;
+    color: #5b5b5b;
+  }
+
+  .contact a {
+    display: block;
+    font-size: 14px;
+    font-weight: 400;
+    color: #5b5b5b;
+    padding: 0px 10px 0px 5px;
+    margin-right: 10px;
+    border-right: 1px solid #5b5b5b;
+    transition: .5s;
+  }
+
+  .contact a:hover {
+    color: #ffb4b4;
+  }
+
+  .func-group {
+    display: flex;
+  }
+
+  .func-item {
+    display: flex;
+    align-items: center;
+    padding: 11px 25px;
+    border-right: 1px solid #f6f6f6;
+    border-bottom: 3px solid rgba(0, 0, 0, 0);
+    position: relative;
+  }
+
+  .func-item .login-btn,
+  #currency-converter option,
+  .cart-btn a {
+    font-size: 14px;
+    color: #5b5b5b;
+    font-weight: 300;
+  }
+
+  .cart-num-tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #ffb4b4;
+    color: white;
+    font-size: 12px;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+  }
+
+  #search-input ::placeholder {
+    font-size: 14x;
+    color: #5b5b5b;
+    font-weight: 300;
+  }
+
+  .fa-solid {
+    color: #5b5b5b;
+  }
+
+  .func-item:hover {
+    border-bottom: 3px solid #ffb4b4;
+  }
+
+  .form-select {
+    border: none;
+    outline: none;
+    color: #5b5b5b;
+    appearance: none;
+    position: relative;
+    cursor: pointer;
+  }
+
+  /* .form-select::after {
+        content: " ";
+        border-top: 2px solid black;
+        border-right: 2px solid black;
+        position: absolute;
+        right: 0;
+        top: 0;
+    } */
+
+  .func-item label,
+  .func-item form,
+  .func-search,
+  .func-search form,
+  #search-input {
+    display: flex;
+    align-items: center;
+  }
+
+  .func-search {
+    padding: 0px 20px;
+  }
+
+  #search-input {
+    width: 110px;
+    border: none;
+    font-size: 14px;
+    appearance: none;
+    outline: none;
+  }
+
+  .func-search .submit-btn {
+    align-items: center;
+    border: none;
+    background: 0 0;
+    font-size: 20px;
+    cursor: pointer;
+  }
+
+  .func-search .fa-solid:hover {
+    color: #ffb4b4;
+  }
+
+  /* ==================header導覽列================== */
+  .header-navbar {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 0px;
+  }
+
+  .header-navbar h2 {
+    visibility: hidden;
+  }
+
+  .header-navbar a {
+    margin: auto 0px;
+  }
+
+  .header-navbar h1 img {
+    vertical-align: bottom;
+  }
+
+  .nav-list,
+  .nav-list li {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-list li {
+    margin: 0px 20px;
+    font-weight: 700;
+  }
+
+  .nav-list-item a {
+    font-size: 14px;
+    transition: 0.5s;
+    margin-right: 5px;
+  }
+
+  .nav-list-item .fa-angle-down {
+    font-size: 12px;
+    color: #949494;
+  }
+
+  .nav-list-item a:hover {
+    color: #ffb4b4;
+  }
+
+  .nav-list-item:first-child a {
+    color: #ffb4b4;
+  }
+
+  .nav-widget {
+    margin: auto 0px;
+  }
+
+  .nav-widget,
+  .widget-item a {
+    display: flex;
+    align-items: center;
+  }
+
+  .nav-widget li {
+    margin: auto 10px;
+  }
+
+  .nav-widget .fa-brands {
+    color: #a6a6a6;
+    transition: 0.5s;
+  }
+
+  .nav-widget .fa-brands:hover {
+    color: black;
+  }
+
+  /* ==================banner廣告列================== */
+
+  .banner {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    background-color: #fbfbfc;
+  }
+
+  .banner-container {
+    width: 1200px;
+    height: 730px;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .banner-content {
+    width: 1200px;
+    display: flex;
+    position: relative;
+    align-items: center;
+    z-index: 1;
+  }
+
+  .banner-text {
+    position: relative;
+    top: 140px;
+    left: 70px;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .inner-discount-tag {
+    width: 80px;
+    background-color: #1d1c21;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0px 0px 20px 0px;
+    padding: 6px 12px;
+    text-align: center;
+  }
+
+  .banner-text h2 {
+    font-size: 54px;
+    font-weight: 700;
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+    border-bottom: 3px solid #232222;
+    line-height: 1.2;
+  }
+
+  .banner-text p {
+    padding: 15px 0px;
+    font-size: 18px;
+    color: #757578;
+  }
+
+  .banner-text a {
+    font-size: 16px;
+    font-weight: 700;
+    color: #1e1d24;
+    letter-spacing: 1px;
+  }
+
+  .fa-arrow-right-long {
+    padding: 0px 10px 0px 0px;
+  }
+
+  .banner-text a:hover {
+    color: #ffb4b4;
+  }
+
+  .banner-text a:hover .fa-arrow-right-long {
+    color: #ffb4b4;
+  }
+
+  .banner-img-box {
+    height: 630px;
+    background-image: url(/hw05_Variiegated/image/slider1.webp);
+    position: absolute;
+    top: 0;
+    border-bottom: 0;
+    right: 0;
+    left: 0;
+    margin: auto;
+    z-index: 0;
+  }
+
+  .banner-discount {
+    width: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .discount-tag {
+    width: 380px;
+    padding: 5px;
+    margin: 30px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #ffb4b4;
+  }
+
+  .discount-tag h3 {
+    color: #232222;
+    font-size: 16px;
+    font-weight: 500;
+    text-align: center;
+    letter-spacing: 1px;
+  }
+
+  .discount-tag p {
+    color: #5D5D5D;
+    font-size: 14px;
+    font-weight: 300px;
+    text-align: center;
+  }
+
+  .discount-tag:nth-child(1) {
+    background-color: #FFE5E5;
+  }
+
+  .discount-tag:nth-child(2) {
+    background-color: #FFECE5;
+  }
+
+  .discount-tag:nth-child(3) {
+    background-color: #FFF5E5;
+  }
+
+  /* ==================SHOP CATEGORIES廣告列================== */
+  .shop-categories {
+    padding: 50px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0px auto 70px;
+    background-image: url(/hw05_Variiegated/image/bg_pink.webp);
+    background-position: 70% left;
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .product-type-group {
+    width: 1200px;
+    padding: 10px 0px;
+    display: flex;
+  }
+
+  .product-type-item {
+    box-sizing: border-box;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .product-type-item .wrap-img {
+    margin-bottom: 20px;
+  }
+
+  .wrap-img img {
+    width: 100%;
+    height: 100%;
+    vertical-align: bottom;
+  }
+
+  section>h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 24px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    color: #232222;
+  }
+
+  .product-type-item h3 {
+    font-size: 16px;
+    color: #232222;
+    position: relative;
+    padding: 0px 50px;
+  }
+
+  .heading::after {
+    content: "";
+    display: inline-block;
+    width: 30px;
+    height: 1px;
+    background-color: #1d1c21;
+    position: relative;
+    bottom: 28px;
+    margin: 0px 15px;
+    transition: 0.5s;
+  }
+
+  .product-type-item h3 {
+    transition: 0.5s;
+  }
+
+  .product-type-item a:hover h3 {
+    color: #ffb4b4;
+  }
+
+  .product-type-item a:hover .heading::after {
+    background-color: #ffb4b4;
+  }
+
+  /* ==================HIGHLIGHT列================== */
+  .highlight-product {
+    margin: 120px 0px 70px;
+  }
+
+  .highlight-container {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .highlight-product .wrap-img {
+    width: 50%;
+    box-shadow: 48px -48px 0px 2px #f6f6f6;
+  }
+
+  .text-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    padding: 0px 160px 0px 110px;
+  }
+
+  .text-container h2 {
+    font-size: 42px;
+    color: #232222;
+    line-height: 1;
+    margin-bottom: 30px;
+  }
+
+  .text-container p {
+    color: #717171;
+    font-size: 16px;
+    font-weight: 300;
+    margin: 0px 0px 30px 0px;
+  }
+
+  .shop-now-btn a {
+    display: block;
+    width: fit-content;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: #1d1c21;
+    padding: 10px 30px;
+    transition: 0.5s;
+  }
+
+  .shop-now-btn a:hover {
+    background-color: #ffb4b4;
+  }
+
+  /* ==================MODELS列================== */
+
+  .populer-models {
+    width: 1200px;
+    margin: 0px auto 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .models-group {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+
+  .models-item {
+    box-sizing: border-box;
+    width: 260px;
+    margin: 20px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative
+  }
+
+  .models-item .wrap-img {
+    width: auto;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+
+  .models-item .wrap-img img:nth-of-type(2) {
+    display: none;
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+    transition: .5s;
+  }
+
+  .models-item a:hover img:nth-of-type(2) {
+    display: contents;
+    z-index: 1;
+  }
+
+  .models-item h3 {
+    font-size: 16px;
+    font-weight: 300;
+  }
+
+  .models-item p {
+    font-size: 10px;
+    line-height: 1.5;
+    color: #ADAAAA;
+  }
+
+  .models-item span {
+    font-size: 16px;
+    color: #232222;
+    font-weight: 700;
+  }
+
+  .models-item .featured-tag {
+    width: fit-content;
+    padding: 5px 8px;
+    background-color: #FEBF01;
+    color: white;
+    position: absolute;
+    top: 20px;
+    right: 0;
+    font-size: 11px;
+    z-index: 3;
+  }
+
+  .item-shade {
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    transition: .5s;
+  }
+
+  .models-item a:hover .item-shade {
+    background-color: rgba(0, 0, 0, .3);
+  }
+
+  .model-item-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    opacity: 100;
+    position: relative;
+  }
+
+  .model-item-container button {
+    font-size: 12px;
+    font-weight: 00;
+    color: white;
+  }
+
+  .model-item-container .item-select-btn {
+    width: fit-content;
+    height: fit-content;
+    padding: 15px 20px;
+    background-color: black;
+    cursor: pointer;
+    border: none;
+    position: absolute;
+    left: 0;
+    top: 10;
+    opacity: 0;
+    transform: translate(-50px);
+    transition: all .3s ease-out;
+  }
+
+  .item-select-btn:hover {
+    background-color: #ffb4b4;
+  }
+
+  .models-item a:hover .item-select-btn {
+    opacity: 100;
+    transform: translate(0px);
+    transition-delay: 0.2s;
+  }
+
+  .model-item-container>p,
+  .model-item-container>h3,
+  .model-item-container>span {
+    transition: 0.1s linear;
+  }
+
+  .models-item a:hover .model-item-container>p {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition-delay: 0.1s;
+  }
+
+  .models-item a:hover .model-item-container>h3 {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition-delay: 0.2s;
+  }
+
+  .models-item a:hover .model-item-container>span {
+    opacity: 0;
+    transform: translateX(-10px);
+    transition-delay: 0.3s;
+  }
+
+  .model-item-container .fa-solid {
+    color: white;
+    font-size: 16px;
+    font-weight: 600;
+  }
+
+  .wrap-wishlist-btn,
+  .wrap-view-btn,
+  .wrap-compare-btn {
+    position: absolute;
+    opacity: 0;
+    transition: all .2s ease;
+    z-index: 4;
+  }
+
+  .wrap-wishlist-btn{
+    top: -60px;
+    right: 40px;
+  }
+
+  .wrap-compare-btn{
+    top: -60px;
+    right: 30px;
+  }
+
+  .wrap-view-btn{
+    top: -60px;
+    right: 0px;
+  }
+
+  .models-item a:hover .wrap-wishlist-btn {
+    opacity: 100;
+    transform: translateX(-40px);
+  }
+
+  .models-item a:hover .wrap-compare-btn {
+    opacity: 100;
+    transform: translateX(-20px);
+    transition-delay: 0.1s;
+  }
+
+  .models-item a:hover .wrap-view-btn {
+    opacity: 100;
+    transform: translateX(-20px);
+    transition-delay: 0.2s;
+  }
+
+  /* .wrap-wishlist-btn.fa-solid {
+    color: white;
+    transition: .3s;
+  }
+
+  .wrap-compare-btn.fa-solid {
+    color: white;
+    transition: .3s;
+  }
+
+  .wrap-view-btn.fa-solid {
+    color: white;
+    transition: .3s;
+  }
+
+  .wrap-wishlist-btn:hover .wrap-wishlist-btn.fa-solid{
+    color: #000000;
+  }
+
+  .wrap-compare-btn:hover .wrap-compare-btn.fa-solid {
+    color: #000000;
+  }
+
+  .wrap-view-btn:hover .wrap-view-btn.fa-solid {
+    color: #000000;
+  } */
+
+  /* =======highlight-style區塊分隔======= */
+  .highlight-style {
+    width: auto;
+    margin: auto;
+    margin-bottom: 70px;
+    background-image: url(/hw05_Variiegated/image/banner.webp);
+    background-position: center;
+  }
+
+  .highlight-style-container {
+    width: 1200px;
+    padding: 150px 0px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+  }
+
+  .highlight-style-container span {
+    font-size: 16;
+    color: #FFFFFF;
+    margin: 0px auto 20px;
+    letter-spacing: 3px;
+    line-height: 1.45;
+  }
+
+  .highlight-style-container h2 {
+    font-size: 60px;
+    color: #FFFFFF;
+    line-height: 1.2;
+    font-weight: 400;
+    text-align: center;
+    margin-bottom: 25px;
+    letter-spacing: 3px;
+  }
+
+  .highlight-style-container .shop-now-btn a {
+    padding: 15px 32px;
+  }
+
+  /* =======Blog post區塊分隔======= */
+  .blog-post {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 70px;
+  }
+
+  .post-group {
+    width: 1200px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .post-item {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    padding: 0px 20px;
+
+  }
+
+  .post-item .wrap-img {
+    width: 540px;
+    height: 400px;
+  }
+
+  .post-item-container {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    width: 520px;
+    background-color: #F6F6FF;
+    padding: 20px;
+    position: relative;
+    right: -40px;
+    top: -80px;
+  }
+
+  .post-item-container h3 {
+    font-size: 24px;
+    color: #232222;
+    transition: .5s;
+  }
+
+  .post-item-container h3:hover {
+    color: #ffb4b4;
+  }
+
+  .post-item-container p {
+    font-size: 13px;
+    color: #717171;
+    padding: 15px 0px;
+  }
+
+  .article-info {
+    display: flex;
+    align-items: center;
+  }
+
+  .article-info a {
+    margin: 0px 3px;
+  }
+
+  .post-item-container span {
+    font-size: 14px;
+    color: #b2b2b2;
+  }
+
+  .post-item-container a {
+    display: block;
+    font-size: 14px;
+    color: #b2b2b2;
+    transition: .5s;
+  }
+
+  .post-item-container a:hover {
+    color: #ffb4b4;
+  }
+
+  .get-news {
+    box-sizing: border-box;
+    display: flex;
+    width: 1200px;
+    padding: 15px 0px;
+    background-color: #FFECE5;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .get-news p {
+    padding: 0px 20px;
+    font-size: 24px;
+    letter-spacing: 1px;
+  }
+
+  .enter-email {
+    width: 50%;
+    padding: 0px 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .enter-email input {
+    padding: 13px 10px;
+    border: none;
+    font-size: 14px;
+    appearance: none;
+    outline: none;
+    margin-right: 10px;
+  }
+
+  .enter-email .email-typing {
+    width: 400px;
+  }
+
+  .enter-email .submit-btn {
+    border: none;
+    background-color: #1d1c21;
+    color: #FFFFFF;
+  }
+
+  .enter-email .submit-btn input {
+    font-size: 14px;
+
+  }
+
+  .enter-email .submit-btn:hover {
+    background-color: #ffb4b4;
+    transition: .5s;
+  }
+
+  .instagram {
+    margin-bottom: 70px;
+  }
+
+  /* =======footer區塊分隔======= */
+
+  .footer-main {
+    background-color: #000000;
+  }
+
+  .footer-main-inner-main {
+    width: 1200px;
+    margin: auto;
+  }
+
+  .footer-inner-main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 65px 0px 40px 0px;
+    border-bottom: 1px solid #949494;
+  }
+
+  .footer-group {
+    box-sizing: border-box;
+    width: 25%;
+    display: flex;
+    flex-direction: column;
+    padding: 0px 20px;
+  }
+
+  .footer-main h2 {
+    color: white;
+    display: block;
+    font-size: 16px;
+    margin-bottom: 16px;
+  }
+
+  .about-us p,
+  .footer-main li a {
+    color: #949494;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 3;
+
+  }
+
+  .footer-main li a {
+    color: #949494;
+    transition: .5s;
+  }
+
+  .footer-main li a:hover {
+    color: #ffb4b4;
+  }
+
+  .footer-main-inner-address {
+    width: 1200px;
+    margin: auto;
+    display: flex;
+    font-weight: 300;
+    font-size: 16px;
+    justify-content: space-between;
+  }
+
+  .footer-main-inner-address address {
+    color: #949494;
+    padding: 16px 20px;
+  }
+
+  .footer-main .nav-widget {
+    color: white;
+    transition: .5s;
+  }
+
+  .footer-main-inner-address .widget-item a .fa-brands:hover {
+    color: #ffb4b4;
+  }
+
+  #web-anchor {
+    width: 40px;
+    height: 40px;
+    background-color: #000000;
+    border-radius: 50%;
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    transition: .5s;
+  }
+
+  #web-anchor a {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  #web-anchor a .fa-solid {
+    color: white;
+    font-size: 16px;
+  }
+
+  #web-anchor:hover {
+    background: #ffb4b4;
+  }
+</style>
+
+<body>
+  <div class="wrapper">
+    <header class="main-header">
+      <div class="header-funcbar">
+        <div class="contact">
+          Call us:
+          <a href="#">+3(800) 2345-6789</a>
+          7 Days a week from 9:00 am to 7:00 pm
+        </div>
+        <h1>Variegated </h1>
+        <div class="func-group">
+          <div class="func-item">
+            <form class="currency-converter" action="">
+              <label for="currency-converter">
+                <select class="form-select" name="dollar" id="currency-converter">
+                  <option value="USD">USD, $</option>
+                  <option value="EUR">EUR, $</option>
+                </select>
+              </label>
+            </form>
+          </div>
+          <div class="func-item">
+            <a class="cart-btn" href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+            <div class="cart-num-tag">0</div>
+          </div>
+          <div class="func-item">
+            <a class="login-btn" href="#">Login</a>
+          </div>
+          <div class="func-search">
+            <form action="">
+              <label for="searchbar">
+                <input type="search" name="" id="search-input" placeholder="Search..." />
+              </label>
+              <button class="submit-btn" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+      <nav class="header-navbar">
+        <a href="#">
+          <div class="wrap-img"><img src="/hw05_Variiegated/image/Variegated_logo.webp" alt="Variegated's logo" /></div>
+        </a>
+        <h2>Navigation Bar</h2>
+        <ul class="nav-list">
+          <li class="nav-list-item">
+            <a href="#">HOME</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#">ABOUT</a>
+          </li>
+          <li class="nav-list-item">
+            <a href="#">FEATURES</a><i class="fa-solid fa-angle-down"></i>
+          </li>
+          <li class="nav-list-item">
+            <a href="#">BLOG</a><i class="fa-solid fa-angle-down"></i>
+          </li>
+          <li class="nav-list-item">
+            <a href="#">SHOP</a><i class="fa-solid fa-angle-down"></i>
+          </li>
+          <li class="nav-list-item">
+            <a href="#">CONTACTS</a>
+          </li>
+        </ul>
+        <ul class="nav-widget">
+          <li class="widget-item">
+            <a href="#" alt="icon links to Facebook">
+              <i class="fa-brands fa-facebook-f"></i>
+            </a>
+          </li>
+          <li class="widget-item">
+            <a href="#" alt="icon links to Instagram">
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+          </li>
+          <li class="widget-item">
+            <a href="#" alt="links to Google">
+              <i class="fa-brands fa-google"></i>
+            </a>
+          </li>
+          <li class="widget-item">
+            <a href="#" alt="links to Twitter">
+              <i class="fa-brands fa-twitter"></i>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <!-- =======container區塊分隔======= -->
+    <!-- =======banner區塊分隔======= -->
+    <main>
+      <section class="banner">
+        <div class="banner-container">
+          <div class="banner-content">
+            <div class="banner-text">
+              <div class="inner-discount-tag">-20% SALE</div>
+              <h2>BE A CHERRY ON PIE
+                <br>
+                IN ANY SITUATION
+              </h2>
+              <p>
+                Experiment, mix and showcase colors, textures and styles!
+                <br>
+                Be yourself and impress others!
+              </p>
+              <a href="#"><i class="fa-solid fa-arrow-right-long"></i>Read More</a>
+            </div>
+            <div class="banner-img-box"></div>
+          </div>
+          <ul class="banner-discount">
+            <li class="discount-tag">
+              <h3>FREE STANDARD DELIVERY</h3>
+              <p>on order over $49</p>
+            </li>
+            <li class="discount-tag">
+              <h3>30% OFF 100’S PANTYS</h3>
+              <p>use code: pantyup 30</p>
+            </li>
+            <li class="discount-tag">
+              <h3>20% STUDENT DISCOUNT PLUS</h3>
+              <p>free next day delivey, excludes sale.</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- =======SHOP CATEGORIES區塊分隔======= -->
+      <section class="shop-categories">
+        <h2>SHOP CATEGORIES</h2>
+        <ul class="product-type-group">
+          <li class="product-type-item">
+            <a href="#">
+              <div class="wrap-img"><img src="/hw05_Variiegated//image/catogories_1.jpg" alt="A Blazer'pic">
+              </div>
+              <div class="heading">
+                <h3>Blazers</h3>
+              </div>
+            </a>
+          </li>
+          <li class="product-type-item">
+            <a href="#">
+              <div class="wrap-img">
+                <img src="/hw05_Variiegated//image/catogories_2.jpg" alt="A Dresse'pic">
+              </div>
+              <div class="heading">
+                <h3>Dresses</h3>
+              </div>
+            </a>
+          </li>
+          <li class="product-type-item">
+            <a href="#">
+              <div class="wrap-img">
+                <img src="/hw05_Variiegated//image/catogories_3.jpg" alt="A Jumpsuit'pic">
+              </div>
+              <div class="heading">
+                <h3>Jumpsuits</h3>
+              </div>
+            </a>
+          </li>
+          <li class="product-type-item">
+            <a href="">
+              <div class="wrap-img">
+                <img src="/hw05_Variiegated//image/catogories_4.jpg" alt="New Arrival'pic">
+              </div>
+              <div class="heading">
+                <h3>New Arrival</h3>
+              </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- ======="highlight區塊分隔======= -->
+      <section class="highlight-product">
+        <div class="highlight-container">
+          <div class="wrap-img"><img src="/hw05_Variiegated//image//blouses.webp" alt="A woman in blouses"></div>
+          <div class="text-container">
+            <h2>FAVOURITE
+              <br>
+              BLOUSES
+            </h2>
+            <p>Our new favourite blouses are defined by great all-over patterns and special details. Our new favourite
+              blouses are defined by great all-over patterns and special details.</p>
+            <div class="shop-now-btn">
+              <a href="#">SHOP NOW</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- ======="populer-models區塊分隔======= -->
+      <section class="populer-models">
+        <h2>MOST RECENT POPULAR MODELS</h2>
+        <ul class="models-group">
+          <li class="models-item">
+            <a href="#">
+              <div class="wrap-img">
+                <img src="/hw05_Variiegated//image/Buttoned-shirt.jpg" alt="">
+                <div class="item-shade"></div>
+              </div>
+              <div class="models-item-content">
+                <div class="model-item-container">
+                  <p>BLAZERS JUMPSUITS</p>
+                  <h3>BUTTONED SHIRT</h3>
+                  <span>59.00$</span>
+                  <button class="item-select-btn">ADD TO CART</button>
+                  <div class="wrap-wishlist-btn">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <div class="wrap-compare-btn">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </div>
+                  <div class="wrap-view-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="models-item">
+            <a href="#">
+              <div class="wrap-img">
+                <img src="/hw05_Variiegated//image/Checked-tunic.jpg" alt="">
+                <img src="/hw05_Variiegated//image/Checked-tunic_2.jpg" alt="">
+                <div class="item-shade"></div>
+              </div>
+              <div class="models-item-content">
+                <div class="model-item-container">
+                  <p>TROUSERS-SHORTS BLAZERS DRESSES</p>
+                  <h3>CHECKED TUNIC</h3>
+                  <span>69$</span>
+                  <button class="item-select-btn">ADD TO CART</button>
+                  <div class="wrap-wishlist-btn">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <div class="wrap-compare-btn">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </div>
+                  <div class="wrap-view-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                </div>
+                <span class="featured-tag">Featured</span>
+              </div>
+            </a>
+          </li>
+          <li class="models-item">
+            <a href="#">
+              <div class="wrap-img">
+                <img src="/hw05_Variiegated/image/Embroidered-shirt.jpg" alt="">
+
+                <div class="item-shade"></div>
+              </div>
+              <div class="models-item-content">
+                <div class="model-item-container">
+                  <p>TROUSERS-SHORTS BLAZERS DRESSES JUMPSUITS NEW ARRIVAL</p>
+                  <h3>EMBROIDERED SHIRT</h3>
+                  <span>36.00$</span>
+                  <button class="item-select-btn">ADD TO CART</button>
+                  <div class="wrap-wishlist-btn">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <div class="wrap-compare-btn">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </div>
+                  <div class="wrap-view-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                </div>
+                <span class="featured-tag">Featured</span>
+              </div>
+            </a>
+          </li>
+          <li class="models-item">
+            <a href="#">
+              <div class="wrap-img">
+                <img src="/hw05_Variiegated/image/Faux-leather-jacket-with-flowing-lapels.jpg" alt="">
+                <img src="/hw05_Variiegated/image/Faux-leather-jacket-with-flowing-lapels_2.jpg" alt="">
+                <div class="item-shade"></div>
+              </div>
+              <div class="models-item-content">
+                <div class="model-item-container">
+                  <p>TROUSERS-SHORT BLAZERS NEW ARRIVAL</p>
+                  <h3>FAUX LEATHER JACKET WITH FLOWING LAPELS</h3>
+                  <span>96.00$</span>
+                  <button class="item-select-btn">ADD TO CART</button>
+                  <div class="wrap-wishlist-btn">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <div class="wrap-compare-btn">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </div>
+                  <div class="wrap-view-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="models-item">
+            <a href="#">
+              <div class="wrap-img">
+                <img src="/hw05_Variiegated/image/Lightweight-puffer-jacket.jpg" alt="">
+                <img src="/hw05_Variiegated/image/Lightweight-puffer-jacket_2.jpg" alt="">
+                <div class="item-shade"></div>
+              </div>
+              <div class="models-item-content">
+                <div class="model-item-container">
+                  <p>TROUSERS-SHORT DRESSES JUMPSUITS</p>
+                  <h3>LIGHTWEIGHT PUFFER JACKET</h3>
+                  <span>54.00$</span>
+                  <button class="item-select-btn">ADD TO CART</button>
+                  <div class="wrap-wishlist-btn">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <div class="wrap-compare-btn">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </div>
+                  <div class="wrap-view-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                </div>
+                <span class="featured-tag">Featured</span>
+              </div>
+            </a>
+          </li>
+          <li class="models-item">
+            <a href="#">
+              <div class="wrap-img">
+                <img src="/hw05_Variiegated/image/Polka-dot-shirt-dress.jpg" alt="">
+                <img src="/hw05_Variiegated/image/Polka-dot-shirt-dress_2.jpg" alt="">
+
+                <div class="item-shade"></div>
+              </div>
+              <div class="models-item-content">
+                <div class="model-item-container">
+                  <p>TROUSERS-SHORT FRESSES</p>
+                  <h3>POLKA DOT SHIRT DRESS</h3>
+                  <span>66.00$</span>
+                  <button class="item-select-btn">ADD TO CART</button>
+                  <div class="wrap-wishlist-btn">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <div class="wrap-compare-btn">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </div>
+                  <div class="wrap-view-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="models-item">
+            <a href="#">
+              <div class="wrap-img">
+                <img src="/hw05_Variiegated/image/Ripped-denim-jacket.jpg" alt="">
+                <img src="/hw05_Variiegated/image/Ripped-denim-jacket_2.jpg" alt="">
+                <div class="item-shade"></div>
+              </div>
+              <div class="models-item-content">
+                <div class="model-item-container">
+                  <p>TROUSERS-SHIRTS DRESSES JUMPSUITS</p>
+                  <h3>RIPPED DENIM JACKET</h3>
+                  <span>35.00$</span>
+                  <button class="item-select-btn">ADD TO CART</button>
+                  <div class="wrap-wishlist-btn">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <div class="wrap-compare-btn">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </div>
+                  <div class="wrap-view-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </li>
+          <li class="models-item">
+            <a href="#">
+              <div class="wrap-img">
+                <img src="/hw05_Variiegated/image/Suede-effect-dress.jpg" alt="">
+                <div class="item-shade"></div>
+              </div>
+              <div class="models-item-content">
+                <div class="model-item-container">
+                  <p>TROUSERS-SHORTS DRESSES JUMPSUITS</p>
+                  <h3>SUEDE EFFECT DRESS</h3>
+                  <span>89.00$</span>
+                  <button class="item-select-btn">ADD TO CART</button>
+                  <div class="wrap-wishlist-btn">
+                    <i class="fa-solid fa-heart"></i>
+                  </div>
+                  <div class="wrap-compare-btn">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                  </div>
+                  <div class="wrap-view-btn">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                  </div>
+                </div>
+              </div>
+              <span class="featured-tag">Featured</span>
+            </a>
+          </li>
+        </ul>
+      </section>
+      <!-- =======style區塊分隔======= -->
+      <section class="highlight-style">
+        <div class="highlight-style-container">
+          <span>DEALY DEALS</span>
+          <h2>
+            MODERN CASUAL
+            <br>
+            ESSENTIALS
+          </h2>
+          <div class="shop-now-btn">
+            <a href="#">SHOP NOW</a>
+          </div>
+        </div>
+      </section>
+      <!-- =======blog post區塊分隔======= -->
+
+      <section class="blog-post">
+        <h2>LATEST FROM BLOG</h2>
+        <ul class="post-group">
+          <li class="post-item">
+            <div class="wrap-img">
+              <img src="/hw05_Variiegated/image/post1.jpg" alt="">
+            </div>
+            <div class="post-item-container">
+              <a href="">
+                <h3>WHEN IN DOUBT, WEAR ROSE PUMPS</h3>
+              </a>
+              <P>It's always a good idea to invest in a good pair of nude pumps. It's a timeless wardrobe staple just…
+              </P>
+              <span class="article-info"><a href="#">22 February</a> - post by <a href="#">admin</a></span>
+            </div>
+          </li>
+          <li class="post-item">
+            <div class="wrap-img">
+              <img src="/hw05_Variiegated/image/post2.jpg" alt="">
+            </div>
+            <div class="post-item-container">
+              <a href="">
+                <h3>HEM YOUR PANTS FOR A SHOE HEIGHT</h3>
+              </a>
+              <P>A mistake many people make is wearing pants (or dresses) that are too long or too short for their
+                shoes.…
+              </P>
+              <span class="article-info"><a href="#">22 February</a> - post by <a href="#">admin</a></span>
+            </div>
+          </li>
+        </ul>
+        <div class="get-news">
+          <p>GET THE LATESET NEWS DELIVERED DAILY!</p>
+          <div class="enter-email">
+            <label for="customer-email">
+              <input class="email-typing" type="email" placeholder="Please enter your email">
+              <input class="submit-btn" type="submit" value="SUBSCRIBE">
+            </label>
+          </div>
+        </div>
+      </section>
+      <!-- =======Instagram區塊分隔======= -->
+      <section class="instagram">
+        <h2>@INSTAGRAM</h2>
+      </section>
+      <!-- =======footer區塊分隔======= -->
+      <section class="footer-main">
+        <footer class="footer-main-inner-main">
+          <div class="footer-inner-main-container">
+            <ul class="footer-group">
+              <h2>CATEGORIES</h2>
+              <li class="footer-item"><a href="#">Help & Contact Us</a></li>
+              <li class="footer-item"><a href="#">Returns & Refunds</a></li>
+              <li class="footer-item"><a href="">Online Stores</a></li>
+              <li class="footer-item"><a href="#">Terms & Conditions</a>
+              </li>
+            </ul>
+            <ul class="footer-group">
+              <h2>OUR STORE</h2>
+              <li class="footer-item"><a href="#">About</a></li>
+              <li class="footer-item"><a href="#">Blog</a></li>
+              <li class="footer-item"><a href="">Shop</a></li>
+              <li class="footer-item"><a href="#">Contacts</a>
+              </li>
+            </ul>
+            <ul class="footer-group">
+              <h2>PROFILE</h2>
+              <li class="footer-item"><a href="#">Checkout </a></li>
+              <li class="footer-item"><a href="#">My Account </a></li>
+              <li class="footer-item"><a href="">Order Tracking </a></li>
+              <li class="footer-item"><a href="#">Terms & Conditions</a> </li>
+            </ul>
+            <div class="footer-group">
+              <div class="about-us">
+                <h2>About Us</h2>
+                <p>Variegated is the place where everyone can is able to find some clothing called to highlight one’s
+                  individuality! We are waiting right for you!</p>
+              </div>
+            </div>
+          </div>
+        </footer>
+        <footer class="footer-main-inner-address">
+          <address>© 2022 Variegated. All Rights Reserved.</address>
+          <ul class="nav-widget">
+            <li class="widget-item">
+              <a href="#" alt="icon links to Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="widget-item">
+              <a href="#" alt="icon links to Instagram">
+                <i class="fa-brands fa-instagram"></i>
+              </a>
+            </li>
+            <li class="widget-item">
+              <a href="#" alt="links to Google">
+                <i class="fa-brands fa-google"></i>
+              </a>
+            </li>
+            <li class="widget-item">
+              <a href="#" alt="links to Twitter">
+                <i class="fa-brands fa-twitter"></i>
+              </a>
+            </li>
+          </ul>
+        </footer>
+      </section>
+      <div id="web-anchor"><a href="#"><i class="fa-solid fa-angle-up"></i></a></div>
+    </main>
+
+
+
+  </div>
+  <footer></footer>
+  </div>
+</body>
+
+</html>

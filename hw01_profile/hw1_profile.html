@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .wrapper {
+            width: 960px;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+            padding: 20px;
+            border-bottom: 1px solid gray;
+        }
+
+        #portrait {
+            width: 250px;
+        }
+
+        p {
+            padding-bottom: 50px;
+            text-align: center;
+            line-height: 2;
+        }
+
+        h2{
+            width: 100%;
+            text-align: center;
+        }
+        .img-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 10px;
+            border-top: solid 1px grey;
+        }
+
+        .img-group img {
+            width: 25%;
+            height: auto;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <h1>title</h1>
+        <section>
+            <h2>個人資料</h2>
+            <img id="portrait" src="" alt="">
+            <p>資料</p>
+        </section>
+        <section>
+            <div class="img-group">
+                <h2>家庭成員</h2>
+                <img id="image1" src="" alt="">
+                <img id="image2" src="" alt="">
+                <img id="image3" src="" alt="">
+            </div>
+        </section>
+    </div>
+    <script>
+
+        const portraitUrl = "image/image.jpg";
+        let profiletitle = "作業:個人Profile檔案";
+
+        let h1 = document.querySelector("h1");
+        let img = document.getElementById("portrait");
+
+        h1.innerHTML = `<b>${profiletitle}<b>`;
+        img.src = portraitUrl;
+        // 另一種方法 img.getAttribute("src", portraitUrl);
+
+        var person = {
+            name: "Bond Forger",
+            email: "spydog@gmail.com",
+            school: "Eden Acedemy",
+            habbit: "當乖狗狗，拯救世界"
+        };
+        let p = document.querySelector("p");
+        p.innerHTML = `姓名: ${person.name}<br> 
+                       Email: ${person.email}<br> 
+                       學校: ${person.school}<br> 
+                       興趣: ${person.habbit}<br>`;
+
+        const familyimgArray = [
+            "image/LoidForger.jpg",
+            "image/AnyaForger.jpg",
+            "image/YorForger.jpg"
+        ];
+
+        let img1 = document.getElementById("image1");
+        let img2 = document.getElementById("image2");
+        let img3 = document.getElementById("image3");
+
+        img1.src = familyimgArray[0];
+        img2.src = familyimgArray[1];
+        img3.src = familyimgArray[2];
+
+
+    </script>
+</body>
+
+</html>

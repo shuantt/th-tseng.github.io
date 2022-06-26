@@ -1,0 +1,340 @@
+.wrapper {
+  max-width: 768px;
+  box-sizing: border-box;
+  margin: auto;
+  font-family: "Poppins", sans-serif;
+}
+
+li {
+  display: block;
+}
+
+img {
+  vertical-align: top;
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+.main-header {
+  width: auto;
+  height: 30px;
+  padding: 18px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.main-header__hb {
+  width: 30px;
+  height: 30px;
+  position: relative;
+}
+.main-header__hb-icon span,
+.main-header__hb-icon span:before,
+.main-header__hb-icon span:after {
+  cursor: pointer;
+  height: 1px;
+  background-color: #518432;
+  content: "";
+  position: absolute;
+  top: 50%;
+}
+.main-header__hb-icon span {
+  width: 20px;
+}
+.main-header__hb-icon span:before {
+  width: 30px;
+  top: -4px;
+}
+.main-header__hb-icon span:after {
+  width: 10px;
+  top: 4px;
+}
+.main-header__hb #hb {
+  display: none;
+}
+.main-headernav--desktop {
+  display: none;
+}
+.main-headernav--mobile {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+.main-headerlist--mobile {
+  display: none;
+}
+.main-header__logo {
+  width: 135px;
+}
+.main-header__function {
+  display: flex;
+  align-items: center;
+}
+.main-header__func-item {
+  padding: 0px 5px;
+}
+.main-header__func-item .fa-solid,
+.main-header__func-item .fa-regular {
+  color: grey;
+}
+
+.banner {
+  display: flex;
+  align-items: center;
+  max-width: auto;
+  min-height: 500px;
+  margin-bottom: 40px;
+  position: relative;
+  padding: 15px;
+}
+.banner__wrap-img {
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding: 5% 0% 5% 30%;
+}
+.banner__wrap-img img {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.banner__content {
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.banner__container-txt {
+  padding-left: 30px;
+  position: absolute;
+  z-index: 1;
+}
+.banner__container-txt h2 {
+  margin-bottom: 16px;
+  line-height: 1.2;
+  font-size: 35px;
+  font-weight: 300;
+}
+.banner__container-txt span {
+  display: block;
+  margin-bottom: 20px;
+  font-size: 16px;
+  font-weight: 300;
+}
+.banner__shopnow-btn {
+  display: inline-block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  letter-spacing: 4px;
+  padding: 14px 40px;
+  border-radius: 2px;
+  background-color: #000;
+  color: #fff;
+  font-size: 12px;
+}
+
+.benefit {
+  width: auto;
+  padding: 0px 15px;
+  margin-bottom: 40px;
+}
+.benefit__heading--primary {
+  color: #518432;
+  font-size: 25px;
+  margin-bottom: 20px;
+  font-weight: 400;
+  text-align: center;
+}
+.benefit__heading--secondary {
+  margin-bottom: 10px;
+  color: #333333;
+  font-size: 23px;
+  text-align: center;
+}
+.benefit__descr {
+  width: 80%;
+  font-size: 14px;
+  line-height: 1.3;
+  color: #949494;
+  text-align: center;
+  margin: 0px auto 40px;
+}
+.benefit__img {
+  width: auto;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+.benefit__img img {
+  width: 100%;
+}
+
+.product {
+  display: flex;
+  flex-direction: column;
+  width: auto;
+  margin: auto;
+  display: flex;
+}
+.product__heading {
+  text-align: center;
+  font-size: 30px;
+  color: #518432;
+  margin-bottom: 40px;
+}
+.product__list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin: auto;
+}
+.product__item {
+  box-sizing: border-box;
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+}
+.product__item a {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 15px;
+}
+.product__item-img {
+  margin-bottom: 18px;
+}
+.product__item-img img {
+  width: 100%;
+}
+.product__price-group {
+  display: flex;
+  margin-bottom: 25px;
+  align-items: center;
+}
+.product__price-group span {
+  display: inline-block;
+  text-align: center;
+}
+.product__price-item {
+  color: #333333;
+  padding: 10px;
+}
+.product__price-item--original {
+  font-size: 12px;
+  margin: 0px 5px;
+  vertical-align: middle;
+}
+.product__price-item--sale {
+  font-size: 17px;
+}
+
+.recommended {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 100px 15px;
+  margin-bottom: 40px;
+  background-image: url(image/recommended.png);
+}
+.recommended__content-txt {
+  flex-grow: 1;
+}
+.recommended__heading {
+  font-size: 25px;
+  color: #518432;
+  margin-bottom: 20px;
+}
+.recommended__descr {
+  font-size: 16px;
+  color: #212529;
+  margin-bottom: 20px;
+}
+.recommended__shopnow-btn {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 15px 40px;
+  border: 1px solid #333333;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.recommended__video {
+  flex-grow: 1;
+}
+.recommended__video iframe {
+  width: 560px;
+  aspect-ratio: 560/315;
+}
+
+.shop-instagram {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 15px;
+  margin: auto;
+}
+.shop-instagram .fa-brands {
+  display: block;
+  font-size: 55px;
+  text-align: center;
+  padding-bottom: 30px;
+}
+.shop-instagram__heading {
+  font-size: 30px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  text-align: center;
+  padding-bottom: 60px;
+}
+.shop-instagram__img-group {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.shop-instagram__img {
+  box-sizing: border-box;
+  width: 30%;
+  margin-bottom: 20px;
+}
+
+.main-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: auto;
+  margin: auto;
+  padding: 47px 15px 68px;
+  background-color: #f4f4f4;
+}
+.main-footer__logo {
+  display: block;
+  width: 160px;
+  margin: 0px auto 32px;
+}
+.main-footer__logo img {
+  width: 100%;
+}
+.main-footer__sitemap-list {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 32px;
+}
+.main-footer__social-media-list {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 28px;
+}
+.main-footer__social-media-item {
+  margin: 0px 6px;
+}
+.main-footer address {
+  text-align: center;
+}/*# sourceMappingURL=main.css.map */

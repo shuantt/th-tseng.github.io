@@ -6,10 +6,6 @@
   font-size: 100%;
 }
 
-li {
-  display: block;
-}
-
 img {
   vertical-align: top;
 }
@@ -63,18 +59,26 @@ a {
 .main-header__function {
   display: flex;
   align-items: center;
+  justify-content: space-around;
+}
+.main-header__function a {
+  display: block;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 .main-header__func-item {
   padding: 0px 5px;
-}
-.main-header__func-item .fa-circle-user {
-  display: none;
 }
 .main-header__func-item .fa-solid,
 .main-header__func-item .fa-regular {
   color: #518432;
 }
 .main-header__nav-menu {
+  display: none;
+}
+
+.main-header__function li:nth-last-of-type(2) {
   display: none;
 }
 
@@ -215,10 +219,15 @@ a {
   align-items: center;
 }
 .product__item a {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 15px;
 }
 .product__item-heading {
   font-size: 1rem;
@@ -228,6 +237,7 @@ a {
   margin-bottom: 18px;
   position: relative;
   z-index: 0;
+  margin-bottom: 15px;
 }
 .product__item-img img {
   width: 100%;
@@ -279,7 +289,7 @@ a {
   font-size: 0.7rem;
   color: white;
   padding: 0.6rem;
-  top: 1rem;
+  top: 0;
   right: 0;
   z-index: 2;
 }
@@ -289,7 +299,7 @@ a {
   font-size: 0.7rem;
   color: white;
   padding: 0.6rem;
-  top: 3rem;
+  top: 2rem;
   left: 0;
   z-index: 2;
 }
@@ -445,12 +455,13 @@ a {
   z-index: 0;
 }
 .main-footer__social-media-item a {
-  display: block;
   width: 45px;
-  margin: auto;
+  height: 45px;
   border-radius: 50%;
+  margin: auto;
   color: #fff;
   text-align: center;
+  line-height: 45px;
   position: relative;
   z-index: 1;
 }
@@ -544,7 +555,13 @@ a {
   .main-header__nav-menu {
     display: block;
   }
-  .main-header .fa-circle-user {
+  .main-header__function a {
+    display: block;
+    width: -webkit-fit-content;
+    width: -moz-fit-content;
+    width: fit-content;
+  }
+  .main-header .main-header__function li:nth-last-of-type(2) {
     display: block;
   }
 

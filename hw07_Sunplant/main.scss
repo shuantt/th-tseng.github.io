@@ -6,9 +6,6 @@
   font-size: 100%;
 }
 
-li {
-  display: block;
-}
 img {
   vertical-align: top;
 }
@@ -70,23 +67,30 @@ a {
   &__function {
     display: flex;
     align-items: center;
+    justify-content: space-around;
+    a{
+      display: block;
+      width: fit-content;
+    }
   }
 
   &__func-item {
     padding: 0px 5px;
 
-    .fa-circle-user {
-      display: none;
-    }
     .fa-solid,
     .fa-regular {
       color: #518432;
     }
   }
+  
 
   &__nav-menu {
     display: none;
   }
+}
+
+.main-header__function li:nth-last-of-type(2){
+  display: none;
 }
 
 #hb:checked .main-header__nav-menu {
@@ -241,13 +245,14 @@ a {
     align-items: center;
 
     a {
+      width: fit-content;
+      height: fit-content;
       display: flex;
       flex-direction: column;
       align-items: center;
-      margin-bottom: 15px;
     }
 
-    &-heading{
+    &-heading {
       font-size: 1rem;
       margin-bottom: 20px;
     }
@@ -257,6 +262,7 @@ a {
     margin-bottom: 18px;
     position: relative;
     z-index: 0;
+    margin-bottom: 15px;
     img {
       width: 100%;
       height: 100%;
@@ -315,17 +321,17 @@ a {
       font-size: 0.7rem;
       color: white;
       padding: 0.6rem;
-      top: 1rem;
+      top: 0;
       right: 0;
       z-index: 2;
     }
-    &--sold-out{
+    &--sold-out {
       background-color: #518432;
       position: absolute;
       font-size: 0.7rem;
       color: white;
       padding: 0.6rem;
-      top: 3rem;
+      top: 2rem;
       left: 0;
       z-index: 2;
     }
@@ -493,12 +499,13 @@ a {
     z-index: 0;
 
     a {
-      display: block;
       width: 45px;
-      margin: auto;
+      height: 45px;
       border-radius: 50%;
+      margin: auto;
       color: #fff;
       text-align: center;
+      line-height: 45px;
       position: relative;
       z-index: 1;
     }
@@ -613,13 +620,21 @@ a {
       display: flex;
       align-items: center;
     }
+
     &__hb {
       display: none;
     }
+
     &__nav-menu {
       display: block;
     }
-    .fa-circle-user {
+    &__function{
+      a{
+        display: block;
+        width: fit-content;
+      }
+    }
+    .main-header__function li:nth-last-of-type(2){
       display: block;
     }
   }
@@ -633,6 +648,7 @@ a {
       justify-content: space-around;
       align-items: center;
     }
+
     &__item {
       display: block;
       padding: 0px 18px;
@@ -643,6 +659,7 @@ a {
         position: relative;
       }
     }
+
     &__item:nth-of-type(3),
     &__item:nth-of-type(5) {
       a::after {

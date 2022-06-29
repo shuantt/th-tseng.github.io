@@ -121,8 +121,8 @@
     }
 }
 
-/* 平板橫向 */
-@media screen and (min-width: 1024px) {
+
+@media screen /* 平板橫向 */and (min-width: 992px) {
     .col-lg-1 {
         width: 8.3333%;
     }

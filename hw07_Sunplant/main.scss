@@ -60,30 +60,25 @@ a {
     }
   }
 
-  h1 {
-    width: fit-content;
-  }
-
   &__logo {
     width: 135px;
-    img {
-      vertical-align: top;
-    }
   }
 
   &__function {
     display: flex;
     align-items: center;
-    justify-content: flex-end;
-    a {
-      display: block;
-      width: fit-content;
+    justify-content: space-around;
+    a{
+      width: ;
     }
   }
 
   &__func-item {
-    padding: 0px 5px;
+    padding: 0px 10px;
 
+    .fa-circle-user {
+      display: none;
+    }
     .fa-solid,
     .fa-regular {
       color: #518432;
@@ -93,10 +88,6 @@ a {
   &__nav-menu {
     display: none;
   }
-}
-
-.main-header__function li:nth-last-of-type(2) {
-  display: none;
 }
 
 #hb:checked .main-header__nav-menu {
@@ -258,7 +249,7 @@ a {
       align-items: center;
     }
 
-    &-heading {
+    &--heading {
       font-size: 1rem;
       margin-bottom: 20px;
     }
@@ -471,19 +462,17 @@ a {
     margin: 0px auto 32px;
     img {
       width: 100%;
-      vertical-align: top;
     }
   }
 
   &__sitemap-list {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     margin-bottom: 35px;
     a {
-      display: block;
       font-size: 0.75rem;
       letter-spacing: 2px;
-      padding: 20px 60px;
+      padding: 0px 20px;
       font-weight: 600;
     }
   }
@@ -623,7 +612,6 @@ a {
   }
 
   .main-header {
-    width: 100%;
     padding: 28px 15px;
     &__nav {
       display: flex;
@@ -637,14 +625,16 @@ a {
     &__nav-menu {
       display: block;
     }
-    &__function {
-      a {
+    &__function{
+      a{
         display: block;
         width: fit-content;
       }
     }
-    .main-header__function li:nth-last-of-type(2) {
-      display: block;
+    &__func-item {
+      .fa-circle-user {
+        display: block;
+      }
     }
   }
 
@@ -653,9 +643,8 @@ a {
     align-items: center;
 
     &__list {
-      width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-around;
       align-items: center;
     }
 
@@ -664,7 +653,6 @@ a {
       padding: 0px 18px;
       line-height: auto;
       a {
-        display: block;
         text-align: center;
         font-size: 0.93rem;
         position: relative;

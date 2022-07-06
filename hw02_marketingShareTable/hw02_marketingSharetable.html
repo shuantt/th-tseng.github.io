@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css"
+        integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="jumbotron bg-info">
+        <h1>2021年全球晶圓代工市率</h1>
+    </div>
+    <div id="container"> </div>
+    <canvas id="mkShare"></canvas>
+
+    <script>
+        let Titles = ['排名', '公司', '國別', '市佔率%'];
+        let FoundryMarketShare = [
+            { ranking: "1", corp: "台積電", country: "台灣", share: "53.1" },
+            { ranking: "2", corp: "三星電子", country: "韓國", share: "17.3" },
+            { ranking: "3", corp: "聯電", country: "台灣", share: "7.2" },
+            { ranking: "4", corp: "格羅方德", country: "美國", share: "6.1" },
+            { ranking: "5", corp: "中芯國際", country: "中國", share: "5.3" },
+            { ranking: "6", corp: "華虹半導體", country: "中國", share: "2.67" },
+            { ranking: "7", corp: "力積電", country: "台灣", share: "1.88" },
+            { ranking: "8", corp: "世界先進", country: "台灣", share: "1.49" },
+            { ranking: "9", corp: "高塔半導體", country: "以色列", share: "1.4" },
+            { ranking: "10", corp: "東部高科", country: "南韓", share: "1" }
+        ]
+
+
+        let container, table, thead, tbody
+
+        window.onload = function () {
+
+            container = document.getElementById('container')
+            table = document.createElement('table')
+            thead = document.createElement('thead')
+            tbody = document.createElement('tbody')
+
+
+            table.setAttribute("class", "table table-bordered table-striped table-dark")
+
+            CreateThead()
+            CreateTbody()
+        }
+
+        function CreateThead() {
+            let theadTr = document.createElement('tr')
+
+            Titles.forEach((item, index) => {
+                let th = document.createElement("th")
+                th.innerText = item
+                theadTr.append(th)
+            })
+            thead.append(theadTr)
+            table.append(thead)
+            container.append(table)
+        }
+
+        function CreateTbody() {
+            FoundryMarketShare.forEach((corp, index) => {
+                let tbodyTr = document.createElement('tr')
+                let corpInfo = Object.values(corp)
+                console.log(corpInfo)
+
+                corpInfo.forEach((data, index) => {
+                    let th = document.createElement('th')
+                    th.innerText = data
+                    tbodyTr.append(th)
+                })
+                tbody.append(tbodyTr)
+                table.append(tbody)
+                container.append(table)
+            
+            })
+        }
+
+    </script>
+</body>
+
+</html>

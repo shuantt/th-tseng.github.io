@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/cssReset.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;400;500;700;900&display=swap"
+        rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Noto Sans TC', sans-serif;
+            padding: 50px;
+        }
+
+        .wrapper {
+            width: 600px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            border-top: #3D4F4E 1px solid;
+            border-bottom: #3D4F4E 1px solid;
+        }
+
+        h1 {
+            width: 100%;
+            text-align: center;
+            font-size: 24px;
+            font-weight: 500;
+            color: #3D4F4E;
+        }
+
+        .info {
+            box-sizing: border-box;
+            width: 300px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+
+        }
+
+        .input {
+
+            box-sizing: border-box;
+            width: 300px;
+            padding: 20px;
+        }
+
+        p {
+            margin-bottom: 10px;
+            color: #3D4F4E;
+        }
+
+        .num_range {
+            border: 1px solid #3D4F4E;
+            padding: 10px 60px;
+            text-align: center;
+            margin-bottom: 20px;
+
+        }
+
+        #num_gen {
+            width: 50%;
+            height: 50px;
+            font: 24px;
+            background-color: #3D4F4E;
+            color: white;
+            border-radius: 10px;
+
+        }
+
+        .num_input {
+            height: 24px;
+            margin-bottom: 30px;
+
+        }
+
+        .btn-group {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+
+        }
+
+        .num_btn {
+            box-sizing: border-box;
+            background-color: #3D4F4E;
+            border-radius: 20px;
+            color: white;
+            font-size: 16px;
+            width: 25%;
+            margin: 10px 10px;
+            height: 40px;
+        }
+
+        .numX {
+            color: #FF6670;
+            font-weight: 900;
+            font-size: 18px;
+        }
+
+        .numV {
+            color: #77A88D;
+            font-weight: 900;
+            font-size: 18px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>終極密碼</h1>
+    <div class="wrapper">
+        <div class="info">
+            <p>1-100 猜數字，目前範圍：</p>
+            <p class="hint"></p>
+            <div class="num_range">
+                <span class="left"></span> - <span class="right"></span>
+            </div>
+            <p style="display:inline-block">你的猜測：</p>
+            <input class="num_input" type="text" minlength="1" maxlength="3">
+            <button id="num_gen">按我才能開始遊戲</button>
+        </div>
+        <div class="input">
+            <div class="btn-group">
+                <input class="num_btn num1" type="button" value="1">
+                <input class="num_btn num2" type="button" value="2">
+                <input class="num_btn num3" type="button" value="3">
+                <input class="num_btn num4" type="button" value="4">
+                <input class="num_btn num5" type="button" value="5">
+                <input class="num_btn num6" type="button" value="6">
+                <input class="num_btn num7" type="button" value="7">
+                <input class="num_btn num8" type="button" value="8">
+                <input class="num_btn num9" type="button" value="9">
+                <input class="num_btn numX" type="reset" value="X">
+                <input class="num_btn num0" type="button" value="0">
+                <input class="num_btn numV" type="submit" value="V">
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        // 宣告區
+        let target
+
+        // DOM
+        //CSSHTML原本就寫好的狀況可以
+        const inputBar = document.querySelector('.num_input')
+        const hint = document.querySelector('.hint')
+        const btnNum = document.querySelectorAll('.num_btn')
+        const left = document.querySelector('.left')
+        const right = document.querySelector('.right')
+        const genBtn = document.querySelector('#num_gen')
+
+        //window.onload
+        window.onload = function () {
+
+            inputBar.disabled = true
+            btnNum.disabled = true
+
+            genBtn.addEventListener('click', () => {
+                genRand()
+                inputBar.disabled = false
+                btnNum.disabled = false
+
+
+                //info的欄位設定
+                genBtn.innerHTML = "重新開局"
+                left.innerText = 1
+                right.innerText = 99
+            })
+
+            btnInput()
+        }
+
+        Number.is
+
+        function btnInput() {
+            btnNum.forEach((dom, index) => {
+                let btn = dom
+                btn.addEventListener('click', () => {
+                    if (index < 9) {
+                        inputBar.value += index + 1
+                    }
+                    if (index == 10) {
+                        inputBar.value += "0"
+                    }
+                    if (index == 9) {
+                        inputBar.value = null
+                    }
+                    if (index == 11) {
+                        CompareNum()
+                        inputBar.value = null
+                    }
+                })
+            })
+        }
+
+        // function
+        function genRand() {
+            let num = Math.floor(Math.random() * 100);
+            if (num == 0) {
+                GenerateNum();
+            }
+            target = num
+            alert("數字已產生，請用按鈕輸入數字")
+        }
+
+
+
+
+        function CompareNum() {
+            if (inputBar.value == target) {
+                hint.innerText = "答對了"
+                alert("答對了!")
+
+            }
+            if (inputBar.value > target && inputBar.value < 100) {
+                hint.innerText = "猜小一點"
+                right.innerText = inputBar.value - 1
+            }
+            if (inputBar.value > 99) {
+                alert("超過範圍，請重新輸入")
+            }
+            if (inputBar.value < target && inputBar.value > 0) {
+                hint.innerText = "猜大一點"
+                left.innerText = parseInt(inputBar.value) + 1
+            }
+            if (inputBar.value == 0) {
+                alert("不可為0")
+            }
+        }
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -163,13 +163,12 @@
         window.onload = function () {
 
             inputBar.disabled = true
-            btnNum.disabled = true
+
 
             genBtn.addEventListener('click', () => {
                 genRand()
                 inputBar.disabled = false
                 btnNum.disabled = false
-
 
                 //info的欄位設定
                 genBtn.innerHTML = "重新開局"
@@ -179,8 +178,6 @@
 
             btnInput()
         }
-
-        Number.is
 
         function btnInput() {
             btnNum.forEach((dom, index) => {

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+        integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+    <style>
+        body {
+            background-color: black;
+        }
+
+        .card {
+            border: 1px solid black;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+
+        .headshot {
+            overflow: hidden;
+        }
+
+        .card-title {
+            color: white;
+            background-color: black;
+            display: inline-block;
+            border-radius: 5px;
+            padding: 5px 15px 5px 15px;
+        }
+
+        .card:hover {
+            box-shadow: 8px 8px 15px #808080;
+            transform: translate(5px, 5px);
+        }
+
+        .card:hover img {
+            transform: scale(1.2);
+            transition: transform 0.5s;
+        }
+
+        .card:not(:hover) img {
+            transform: scale(1, 1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover .card-body {
+            background-color: black !important;
+        }
+
+        .card:hover .card-title {
+            color: black;
+            background-color: rgb(169, 0, 0) !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div class='container-fluid'>
+        <div class='jumbotron bg-dark'>
+            <h1 class="text-white">
+                League of Legends
+                <br>
+                Hero Cards
+            </h1>
+        </div>
+
+        <div class='row m-auto justify-content-between'>
+
+        </div>
+    </div>
+
+    <template id="cardHero">
+        <div class="card bg-secondary" style="width: 20rem;">
+            <img src="" class="card-img-top" alt="">
+            <div class="card-body bg-dark">
+                <h5 class="card-title bg-black">{{英雄名字}}{</h5>
+                <p class="card-text text-white">{{英雄介紹}}{</p>
+                <a href="#" class="btn btn-outline-danger" data-toggle="modal" data-target="#exampleModal">看更多</a>
+            </div>
+        </div>
+    </template>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content bg-dark">
+                <div class="modal-header bg-dark">
+                    <h5 class="modal-title text-danger font-weight-bolder" id="exampleModalLabel">{{英雄名字}}</h5>
+                    <button type="button" class="close btn" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body bg-dark p-0">
+                    <img id="heroImg" class="w-100">
+                    <p id="statistics" class="text-danger p-4" >{{英雄屬性}}</p>
+                </div>
+                <div class="modal-footer ">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"
+        integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI"
+        crossorigin="anonymous"></script>
+
+
+
+    <script>
+        //fetch取資料，來源是我自己的github
+        const url = "https://raw.githubusercontent.com/th-tseng/FileStorage/main/LolHeroData"
+
+
+        //宣告
+        let heroObj
+        let nameArray = []
+        let heroArray = []
+        let cardTemplate = document.querySelector('#cardHero')
+        let row = document.querySelector('.row')
+        let btn = document.querySelector('#testBtn')
+
+
+        //window.onload
+        window.onload = function () {
+            fetch(url)
+                .then(resp => resp.json()) //接收json資料
+                .then(result => {
+                    heroObj = result.data //存進heroObj中 (因為這個obj是object包的)
+                    ObjectToArray()
+                    console.log(heroArray)
+                    heroArray.forEach((hero, index) => {
+                        row.appendChild(getCard(hero.name, hero.imgUrl, hero.blurb, hero.hp, hero.mp, hero.movespeed, hero.armor, hero.block, hero.range))
+                    })
+                })
+                .catch((resp) => {
+                    console.log('錯誤')
+                })
+                .finally(() => {
+                    console.log('finally')
+                })
+        }
+
+
+        //function
+
+        //物件轉陣列
+        function ObjectToArray() {
+            nameArray = Object.keys(heroObj)
+            nameArray.forEach((name, index) => {
+                heroArray.push(
+                    {
+                        name: `${heroObj[name].id} - ${heroObj[name].name}`,
+                        blurb: `${heroObj[name].blurb.substring(0, 50)}......`,
+                        imgUrl: `https://ddragon.leagueoflegends.com/cdn/img/champion/splash/${heroObj[name].id}_0.jpg`,
+                        hp: heroObj[name].stats.hp,
+                        mp: heroObj[name].stats.mp,
+                        movespeed: heroObj[name].stats.movespeed,
+                        armor: heroObj[name].stats.armor,
+                        spellblock: heroObj[name].stats.spellblock,
+                        attackrange: heroObj[name].stats.attackrange
+                    }
+                )
+            })
+        }
+
+
+        //顯示卡牌
+        function getCard(title, imgUrl, descr, hp, speed, armor, block, range) {
+            let cloneCard = cardTemplate.content.cloneNode(true)
+            cloneCard.querySelector('.card-title').innerText = title
+            cloneCard.querySelector('img').src = imgUrl
+            cloneCard.querySelector('.card-text').innerText = descr
+            cloneCard.querySelector('.btn').addEventListener('click', function () {
+                setModal(title, imgUrl, hp, speed, armor, block, range)
+            })
+            return cloneCard
+        }
+
+
+        // Modal的內容
+        function setModal(title, imgUrl, hp, speed, armor, block, range) {
+            let modal = document.querySelector('#exampleModal')
+            let h5 = document.querySelector('.modal-title')
+            h5.innerText = title
+            let img = document.querySelector('#heroImg')
+            img.src = imgUrl
+            let stats = document.querySelector('#statistics')
+            stats.innerHTML = `HP: ${hp}<br> Move Speed: ${speed}<br> Armor:${armor} <br> Spell Block: ${block}<br> AttackRange:${range}`
+        }
+
+
+    </script>
+</body>
+
+</html>

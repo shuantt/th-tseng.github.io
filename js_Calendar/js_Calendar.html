@@ -370,6 +370,10 @@
               td.onclick = function () {
                 bootstrap.Modal.getOrCreateInstance(addModal).show()
                 addDateInput.value = `${year}-${month + 1}-${td.childNodes[0].data}`
+                
+                
+                
+                //這個怎麼改哩...
                 title.innerText = `${year}/${month + 1}/${date}行程`
                 console.dir(td)
 

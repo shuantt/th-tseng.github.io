@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>只能跳的瑪莉歐</title>
+    <script src="https://kit.fontawesome.com/05704b3d70.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/cssReset.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+    <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=DotGothic16">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        body {
+            font-family: 'VT323', 'DotGothic16', sans-serif;
+            color: black;
+            background-image: url('image/mario3.gif');
+            background-repeat: no-repeat;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        #canvas {
+            background: transparent;
+            border-radius: 5px;
+        }
+
+        .mario {
+            display: none;
+        }
+        h1{
+            font-size: 30px;
+        }
+
+        
+    </style>
+</head>
+
+<body>
+    <h1>讀取中...</h1>
+    <!-- <canvas id="canvas" width="600" height="600"> </canvas> -->
+    <img class="mario" src="./image/mario.png" alt="瑪莉歐照片">
+
+    <script>
+        //<canvas> 方法getContext()，透過此方法取得渲染環境及其繪圖function；getContext()輸入參數只有渲染環境類型一項，現在要做2D繪圖，就輸入”2d”。
+        const canvas = document.querySelector('#canvas')
+        const ctx = canvas.getContext('2d')
+
+        console.log(canvas)
+        //測試
+        canvas.height = '300'
+
+        const img = document.querySelector('.mario')
+
+        const mario = {
+            w: 50,
+            h: 50,
+            x: 100,
+            y: 200,
+            speed: 10,
+            dx: 0,
+            dy: 0
+        }
+
+        function drawMario() {
+            ctx.drawImage(img, mario.x, mario.y, mario.w, mario.h)
+        }
+
+
+        function clear() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height)
+        }
+
+        //改變瑪莉歐位置
+        function newPosition() {
+            mario.y += mario.dy
+            if (mario.y == 210) {
+                mario.y = 200
+            }
+            detectWalls()
+        }
+
+        function detectWalls() {
+            if (mario.y < 50) {
+                mario.dy = mario.speed
+            }
+        }
+
+
+        function update() {
+            clear()
+            drawMario()
+            newPosition()
+            requestAnimationFrame(update)
+        }
+
+        function keyPress(e) {
+            if (e.key == 'ArrowUp') {
+                marioJump()
+            }
+        }
+
+        function keyRelease(e) {
+            if (e.key == 'ArrowUp') {
+                marioDown()
+            }
+        }
+
+
+        function marioJump() {
+            mario.dy = -mario.speed
+        }
+        function marioDown() {
+            mario.dy = mario.speed
+        }
+
+        update()
+
+        document.addEventListener('keyup', keyPress)
+        // document.addEventListener('keyup', keyRelease)
+
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>只能跳的瑪莉歐</title>
+    <script src="https://kit.fontawesome.com/05704b3d70.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <link rel="stylesheet" href="/cssReset.css">
+    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css" />
+    <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=DotGothic16">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        body {
+            font-family: 'VT323', 'DotGothic16', sans-serif;
+        }
+
+        .view {
+            width: 480;
+            height: auto;
+            margin: auto;
+            padding: 50px;
+            position: relative;
+        }
+
+        .backgroundImg {
+            width: 100%;
+            /* height: 100%; */
+            vertical-align: top;
+            position: absolute;
+            margin: auto;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            z-index: -1;
+        }
+
+        .container {
+            width: 480;
+        }
+
+        i {
+            font-size: 36px;
+        }
+
+        .emp {
+            height: 50px;
+        }
+
+        .intro {
+            border-radius: 20px;
+            background-color: rgba(198, 198, 198, 50%);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .heart {
+            display: flex;
+            justify-content: space-around;
+            border: 1px solid blue;
+            border-radius: 20px;
+        }
+
+        .fa-heart {
+            font-size: 18px;
+            color: red;
+        }
+
+        .fa-angles-up {
+            font-size: 24px;
+        }
+
+        [box-id] {
+            /* width: 80px; */
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid black; */
+            transition: 0.3s;
+        }
+
+        [box-id].active {
+            border: solid 5px transparent;
+            box-shadow: 0 0 20px;
+            transition: 0s;
+        }
+
+        #jump {
+            color: green;
+            text-align: center;
+            /* width: 80px; */
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* border: 1px solid black; */
+            transition: 0.3s;
+        }
+
+        .mario-jump {
+            width: 60%;
+        }
+
+        .mario-walk {
+            width: 60%;
+        }
+    </style>
+
+<body>
+    <div class="view col-12">
+        <img class="backgroundImg" src="./image/test_bg.jpg" alt="">
+        <div class="row m-auto">
+            <div class="intro col-5 p-2">
+                <h1 class="small">只能跳的瑪莉歐</h1>
+                <p class="small">別被怪物撞到就對了，瑪莉歐頭上有時會出現小驚喜!<br>
+                    注意：你採不死怪物，因為我寫不出來。</p>
+            </div>
+            <div class="col-3"></div>
+            <div class="heart col-4 align-items-center ">
+                <p class="d-block">生命值：</p>
+                <i class="fa-solid fa-heart fa-beat d-block" style="--fa-animation-duration: 2s;"></i>
+                <i class="fa-solid fa-heart fa-beat d-block" style="--fa-animation-duration: 2s;"></i>
+                <i class="fa-solid fa-heart fa-beat d-block" style="--fa-animation-duration: 2s;"></i>
+                <i class="fa-solid fa-heart fa-beat d-block" style="--fa-animation-duration: 2s;"></i>
+                <i class="fa-solid fa-heart fa-beat d-block" style="--fa-animation-duration: 2s;"></i>
+            </div>
+        </div>
+        <div class="emp col-12"></div>
+        <div class="container">
+            <div class="row m-auto">
+                <div id="jump" class="col-2 "><img class="mario-jump" src="./image/mario.png" alt=""></div>
+                <div id="jump" class="col-8 ">{{失敗了!請重新開始!}}</div>
+                <div id="jump" class="col-2 "></div>
+            </div>
+            <div class="row m-auto">
+                <div box-id="6" class="col-2"><img class="mario-walk" src="./image/mario_1.png" alt=""></div>
+                <div box-id="5" class="col-2"></div>
+                <div box-id="4" class="col-2"></div>
+                <div box-id="3" class="col-2"></div>
+                <div box-id="2" class="col-2"></div>
+                <div box-id="1" class="col-2 active"></div>
+            </div>
+            <div class="col-2 d-flex ">
+                <button class="btn btn-secondary mt-3">Jump</button>
+            </div>
+            <div class="col-4 d-flex m-auto justify-content-around">
+                <button class="start btn btn-danger w-50">開始遊戲</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <script>
+        //宣告
+        let brickData = [
+            {
+                id: '1',
+                color: '#black',
+                icon: 'fa-solid fa-ghost',
+                target: function () { return `${this.icon}`.split('-')[1] }
+            },
+            {
+                id: '2',
+                color: '#black',
+                icon: 'fa-solid fa-ghost',
+                target: function () { return `${this.icon}`.split('-')[1] }
+            },
+            {
+                id: '3',
+                color: '#black',
+                icon: 'fa-solid fa-ghost',
+                target: function () { return `${this.icon}`.split('-')[1] }
+            },
+            {
+                id: '4',
+                color: '#black',
+                icon: 'fa-solid fa-ghost',
+                target: function () { return `${this.icon}`.split('-')[1] }
+            },
+            {
+                id: '5',
+                color: '#black',
+                icon: 'fa-solid fa-ghost',
+                target: function () { return `${this.icon}`.split('-')[1] }
+            },
+            {
+                id: '6',
+                color: 'transparent',
+                icon: 'fab fa-instagram-square',
+                target: function () { return `${this.icon}`.split('-')[1] }
+            }
+
+        ]
+
+        //像是瑪里歐跳躍，怪物隨機出現，隨機速度向左移動，角色永遠都停佇在id:6的位置，只有往上跳的動作
+
+        //步驟
+        //step1:開始按鈕(initial+reset)
+        //step2:跳出倒數計時3、2、1
+        //step3:怪物右至左出現+移動 (隨機時間、隨機速率)
+        //step4:當怪物要到id:6時，需按跳躍鍵，出現在jump格子上，並且在怪物離開id:6時回歸id:6格子
+        //if怪物和角色同時在id:6，快速出現一個ouch!的提示(直接更換圖片)，在馬力歐旁邊，上方愛心-1\
+        //判斷：每當玩家在id:5的時後按下jump時算過關
+        //if愛心不為0，繼續下一個round
+        //if愛心0，顯示大字，失敗了
+
+
+        //增加遊戲性，JUMP格子隨機出現怪物或愛心(出現1秒)，如果此時按jump的話會對應 +愛心(改成說yeah的瑪莉歐) 或 -愛心(ouch!瑪莉歐) 的動作
+
+
+
+        //剩餘要走的步數
+        let steps = 0
+        //全部的步數
+        let allSteps = 0
+        //目前走到哪一格
+        let current = 0
+        //速率(越大代表走得越慢)
+        let speed
+
+        //DOM
+        let bricks = document.querySelectorAll('[box-id]')
+        //注意query selector 是照順序抓而非照我們給的id數字順序抓
+        //為了重新排序所以我們寫了function setBricks
+        const startBtn = document.querySelector('.start')
+        const msgBox = document.querySelector('#msg')
+
+        //window.onload
+        window.onload = function () {
+            setBricks()
+            startBtn.onclick = function () {
+                let random = Math.floor(Math.random() * brickData.length) + 1
+
+                //version1:steps = random
+                // steps = random
+
+                //version2:steps多跑一點才停下來
+                steps = random + (5 * random)
+                allSteps = steps
+                speed = random * 50
+                turnAround()
+            }
+        }
+
+        //function
+        function setBricks() {
+            //利用Array.from()將node List 改成array
+            bricks = Array.from(bricks).sort((a, b) => {
+                return a.getAttributeNode('box-id').value - b.getAttributeNode('box-id').value
+            })
+
+
+            bricks.forEach(brick => {
+                let id = brick.getAttributeNode('box-id').value
+                let data = brickData.find(x => x.id == id)
+                let icon = document.createElement('i')
+                icon.setAttribute("class", data.icon)
+                icon.style.color = data.color
+                brick.appendChild(icon)
+            })
+        }
+
+        //把目前brick的
+        function turnAround() {
+            bricks[current].classList.remove('active')
+            current++
+            if (current >= bricks.length) {
+                current = 0
+            }
+            bricks[current].classList.add('active')
+            steps--
+
+            //還沒走完的時候
+            if (steps > 0) {
+                setTimeout(turnAround, speed)
+
+                //當走道剩下1/3的時候，改變速度
+                if (steps < Math.floor((allSteps / 8))) {
+                    speed += 20
+                }
+            }
+            //走完了
+            else {
+                let val = brickData[current].target()
+                msgBox.innerText = `接下來 -> ${val}`
+            }
+        }
+
+    </script>
+</body>
+
+</html>

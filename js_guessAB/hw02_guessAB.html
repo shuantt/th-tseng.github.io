@@ -107,7 +107,7 @@
             start.addEventListener('click', startGame)
             restart.addEventListener('click', Restart)
             submit.addEventListener('click', Compare)
-            checkAnswer.addEventListener('click',CheckAnswer)
+            checkAnswer.addEventListener('click', CheckAnswer)
         }
 
         //function
@@ -127,6 +127,8 @@
             target.forEach(item => {
                 console.log(item)
             })
+            cleanHint()
+
         }
 
         function genAnswer() {
@@ -144,15 +146,17 @@
             checkAnswer.disabled = true
             guessList.innerHTML = null
             submit.disabled = false
+            hint.innerText = ""
             target = []
+            cleanHint()
         }
 
         function Compare() {
             let li = document.createElement('li')
-                li.classList.add('list-group-item', 'guess')
-                let badge = document.createElement('span')
-                let guess = document.createElement('span')
-                guess.classList.add('guess_num')
+            li.classList.add('list-group-item', 'guess')
+            let badge = document.createElement('span')
+            let guess = document.createElement('span')
+            guess.classList.add('guess_num')
 
             if (userInput.value == target.join('')) {
                 badge.classList.add('badge', 'bg-success', 'text-white', 'bg-opacity-75', 'showAB')
@@ -169,22 +173,30 @@
                 badge.classList.add('badge', 'bg-danger', 'text-white', 'bg-opacity-75', 'showAB')
                 let guessNum = userInput.value
                 let intersect = target.filter(x => guessNum.includes(x))
-                let a = intersect.filter(x=>target.indexOf(x)==guessNum.indexOf(x))
+                let a = intersect.filter(x => target.indexOf(x) == guessNum.indexOf(x))
                 let b = intersect.length - a.length
                 badge.innerText = `${a.length} A ${b} B`
                 guess.innerText = userInput.value
-                
+
                 li.appendChild(badge)
                 li.appendChild(guess)
                 guessList.appendChild(li)
             }
+            userInput.value = ""
+
         }
 
-        function CheckAnswer(){
+        function CheckAnswer() {
             hint.style.display = "block"
-            hint.innerText=`答案是:${target.join('')}`
+            hint.innerText = `答案是:${target.join('')}`
         }
 
+        function cleanHint() {
+            hint.innerText = ""
+            hint.style.display = "none"
+        }
+
+ 
     </script>
 </body>
 

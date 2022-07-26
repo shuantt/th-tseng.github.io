@@ -219,7 +219,7 @@
         // function
         function initialHeart() {
             // <i class="fa-solid fa-heart fa-beat "></i>
-            heartList.forEach(x => {x.style.display = 'none'})
+            heartList.forEach(x => { x.style.display = 'none' })
 
             for (let i = 0; i < heartCount; i++) {
                 heartList[i].style.display = 'block'
@@ -235,6 +235,7 @@
             if (heartCount > 0) {
                 moveMonster()
             }
+
         }
 
         function jump() {
@@ -264,18 +265,14 @@
                     startGame()
                 }
             }, 100)
-
         }
 
         //生命值規0 結束
         function gameOver() {
             if (heartCount == 0) {
                 alert('你輸了，遊戲結束!')
+                location.reload()
             }
-        }
-
-        function stopMonster() {
-            clearInterval(monsterMove)
         }
 
         //碰撞檢查
@@ -286,7 +283,7 @@
 
         function hitCheck() {
             console.log(parseInt(monster.style.right, 10))
-            
+
             if (parseInt(monster.style.right, 10) >= 500) {
                 if (parseInt(mario.style.bottom, 10) < 100) {
                     console.log('hit')

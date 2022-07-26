@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>只能跳的瑪莉歐</title>
+    <script src="https://kit.fontawesome.com/05704b3d70.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous" />
+    <!-- <link rel="stylesheet" href="/cssReset.css"> -->
+    <link rel="stylesheet" href="https://fonts.google.com/share?selection.family=DotGothic16">
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DotGothic16&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+        body {
+            font-family: 'VT323';
+        }
+
+        .container {
+            max-width: 600px;
+            padding-top: 30px;
+            padding-left: 0px;
+            padding-right: 0px;
+
+        }
+
+        .view {
+            width: 100%;
+            background-image: url(./image/test_bg2.gif);
+            background-repeat: no-repeat;
+            padding-top: 30px;
+            height: 400px;
+            margin: auto;
+            vertical-align: top;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .instruction {
+            margin-bottom: 80px;
+            margin-left: 20px;
+        }
+
+        h1 {
+            display: block;
+            width: fit-content;
+            height: fit-content;
+            text-align: center;
+            font-size: 72px;
+            color: rgb(90, 140, 200);
+            position: absolute;
+            top: 100px;
+            right: 0px;
+            left: 0px;
+            margin: auto;
+        }
+
+        .rule {
+            font-size: 12px;
+        }
+
+        img {
+            width: 100%;
+        }
+
+        .heart {
+            align-items: center;
+        }
+
+        .heart-txt {
+            padding: 10px;
+        }
+
+        .fa-heart {
+            font-size: 14px;
+            margin-right: 10px;
+            color: red;
+            --fa-animation-duration: 2s;
+        }
+
+        .game-area {
+            width: 600px;
+            height: 180px;
+            display: flex;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .mario {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            right: 500px;
+            /* bottom: 0; */
+            position: absolute;
+        }
+
+        .mario img {
+            width: 50%;
+        }
+
+        .monster {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            align-items: flex-end;
+            position: absolute;
+            right: 0;
+            bottom: 0;
+        }
+
+        .monster img {
+            width: 100%;
+        }
+
+        .start {
+            margin: auto;
+        }
+    </style>
+
+<body>
+    <div class="container">
+        <div class="view">
+            <h1>MARIO JUMP</h1>
+            <div class="instruction row">
+                <div class="intro d-flex align-items-center col-8 ">
+                    <p class="rule">
+                        別被怪物撞到就對了<br>
+                        注意：你踩不死怪物，因為我寫不出來。
+                    </p>
+                </div>
+                <div class="heart d-flex col-4">
+                    <span class="heart-txt">生命值:</span>
+                    <div class="heart-box d-flex align-items-center ">
+                        <i class="heart1 fa-solid fa-heart fa-beat " style="--fa-animation-duration: 2s;"></i>
+                        <i class="heart2 fa-solid fa-heart fa-beat " style="--fa-animation-duration: 2s;"></i>
+                        <i class="heart3 fa-solid fa-heart fa-beat " style="--fa-animation-duration: 2s;"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="game-area">
+                <div class="mario" style="bottom: 0px;"><img class="mario-jump" src="./image/mario3.gif" alt=""></div>
+                <div class="monster"><img src="./image/boo2.gif" alt=""></div>
+            </div>
+        </div>
+        <div class="gameCtrl">
+            <button class="start btn btn-outline-danger">開始遊戲</button>
+        </div>
+        <div class="countdown"></div>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
+        crossorigin="anonymous"></script>
+
+    <script>
+        // 宣告
+
+        //剩餘生命
+        let heartCount = 3
+        //剩餘要走的步數
+        let steps = 0
+        //全部的步數
+        let allSteps = 0
+        //目前走到哪一格
+        let current = 0
+        //速率(越大代表走得越慢)
+        let speed = Math.floor(Math.random() * 4) + 1 //speed四種隨機
+        let color = ['red', 'blue', 'yellow']
+        let move
+
+        // DOM
+        const startBtn = document.querySelector('.start')
+        const jumpBtn = document.querySelector('.jump')
+        const mario = document.querySelector('.mario')
+        const monster = document.querySelector('.monster')
+        const heartBox = document.querySelector('.heart-box')
+        const heart1 = document.querySelector('.heart1')
+        const heart2 = document.querySelector('.heart2')
+        const heart3 = document.querySelector('.heart3')
+        const heartList = [heart1, heart2, heart3]
+        const gameView = document.querySelector('.view')
+        const countDown = document.querySelector('.countdown')
+        const h1 = document.querySelector('h1')
+
+        // window.onload
+        window.onload = function () {
+
+            //初始化生命值
+            initialHeart()
+
+            //怪物先隱藏
+            monster.style = 'display:none'
+
+            //標題字不斷變色
+
+            //開始按鈕
+            startBtn.addEventListener('click', () => {
+                initialHeart()
+                startGame()
+                startBtn.disabled = true
+            })
+
+            //視窗按就可以跳
+            gameView.addEventListener('click', () => {
+                jump()
+
+                //馬力歐跳起來都是半秒
+                setTimeout(() => {
+                    positionBack()
+                }, 400)
+            })
+        }
+        // function
+        function initialHeart() {
+            // <i class="fa-solid fa-heart fa-beat "></i>
+            heartList.forEach(x => {x.style.display = 'none'})
+
+            for (let i = 0; i < heartCount; i++) {
+                heartList[i].style.display = 'block'
+            }
+            // heart1.style.display = 'block'
+            // heart2.style.display = 'block'
+            // heart3.style.display = 'block'
+
+        }
+
+        function startGame() {
+
+            if (heartCount > 0) {
+                moveMonster()
+            }
+        }
+
+        function jump() {
+            mario.style.bottom = '100px'
+        }
+
+        function positionBack() {
+            mario.style.bottom = 0
+        }
+
+        function moveMonster() {
+            speed = 1
+            //Math.floor(Math.random() * 4) + 1
+            monster.style.display = 'flex' //顯示怪物
+            let maxLength = 600   //總距離不超過
+            let step = 50         //步伐大小
+            let moveDistance = 0  //每次移動距離
+            monster.style.right = moveDistance
+
+            move = setInterval(() => {
+                if (moveDistance < maxLength + 1) {
+                    monster.style.right = `${moveDistance}px`
+                    moveDistance += speed * step
+                    hitCheck()
+                } else {
+                    clearInterval(move)
+                    startGame()
+                }
+            }, 100)
+
+        }
+
+        //生命值規0 結束
+        function gameOver() {
+            if (heartCount == 0) {
+                alert('你輸了，遊戲結束!')
+            }
+        }
+
+        function stopMonster() {
+            clearInterval(monsterMove)
+        }
+
+        //碰撞檢查
+        //mario 的 bottom 只有 0 or 100px
+        //mario在right 500px 的地方 
+        //monster的 right > 450px 的時候，mario的bottom=0就代表碰撞
+        //heart-1
+
+        function hitCheck() {
+            console.log(parseInt(monster.style.right, 10))
+            
+            if (parseInt(monster.style.right, 10) >= 500) {
+                if (parseInt(mario.style.bottom, 10) < 100) {
+                    console.log('hit')
+                    heartCount--
+                    initialHeart()
+                    clearInterval(move)
+                    startGame()
+                    gameOver()
+                }
+            }
+        }
+
+    </script>
+</body>
+
+</html>
